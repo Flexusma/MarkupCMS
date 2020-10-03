@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+const cmdhandler = require('./bin/cmd_handler');
+
+cmdhandler.doCmd(process.argv);;
