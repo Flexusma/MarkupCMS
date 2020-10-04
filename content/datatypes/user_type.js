@@ -33,7 +33,7 @@ exports.User = class User {
         let resp = await DB.getFromTable("users","username",username);
         //console.log(resp);
 
-        if(resp instanceof Error){
+        if(!(resp instanceof Error)){
 
         let aresp = resp[0];
 

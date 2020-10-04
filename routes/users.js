@@ -2,6 +2,7 @@ var express = require('express');
 const { APIsessionChecker } = require('../content/authentication/middleware');
 const { Permission } = require('../content/authentication/permissions');
 const { User } = require('../content/datatypes/user_type');
+const { Hash } = require('../content/encrypt/hash');
 const { Responses } = require('../content/response/responses');
 const { RespCode } = require('../content/response/response_codes');
 var router = express.Router();
@@ -26,12 +27,12 @@ router.get('/create', APIsessionChecker ,async function(req, res, next) {
   if(email===undefined) return res.json(Responses.respError(RespCode.EMAIL_MISSING));
   if(Permission.hasPermission(req.session.permission, Permission.CREATE_USER)){
     console.log(username+ " - "+pass);
-    let pass_hash = Hash.hash512Salt(pass);
       if(permission===undefined) permission=0;
 
-    let user = await User.new(username,email,pass_hash,permission);
+    let user = await User.new(username,email,pass,permission);
 
-    if(user instanceof Error){
+    if(!(user instanceof Error)){
+      user.pass = null;
       return res.json(Responses.respOK(RespCode.TEST_OK, user));
     }else return res.json(Responses.respError(RespCode.USER_CREATION_FAILED,user));
   }else res.json(Responses.respError(RespCode.NO_PERMISSION));
