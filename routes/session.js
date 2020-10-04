@@ -18,8 +18,10 @@ router.get('/create', APINOTsessionChecker ,async function(req, res, next) {
     let pass_hash = Hash.hash512Salt(pass);
     let user = await User.getByUsername(username);
 
-    if(user!=undefined){
+    if(user[0]!=undefined && !(user instanceof Error)){
+        user = user[0];
         if(user.pass===pass_hash){
+            user.pass = null;
             req.session.user = user;
             req.session.permission = user.permission;
             return res.json(Responses.respOK(RespCode.TEST_OK,[req.session.user, req.session.permission, req.session.id]));

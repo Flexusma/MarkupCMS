@@ -32,11 +32,15 @@ exports.User = class User {
     static async getByUsername(username){
         let resp = await DB.getFromTable("users","username",username);
         //console.log(resp);
+
+        if(resp instanceof Error){
+
         let aresp = resp[0];
 
         let user = new User(aresp.id, aresp.username, aresp.email, aresp.pass, aresp.creation_date, aresp.last_login, aresp.permission);
 
         return user;
+        }else return resp;
     }
     
     static async getByEmail(email){

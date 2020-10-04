@@ -2,6 +2,10 @@
 
 exports.Permission = class Permission{
 
+    static hasPermission(int, permission){
+        return (int & permission) == permission;
+    }
+
     static CREATE_USER = 0x1;
     static DELETE_USER = 0x2;
     static EDIT_USER = 0x4;
@@ -15,6 +19,7 @@ exports.Permission = class Permission{
     static EDIT_POST = 0x100;
 
 
+    
 
 
 }

@@ -15,11 +15,25 @@ exports.RespCode = class RespCode{
     }
     static UNAME_MISSING = {
         code: 604,
-        message: "ERROR, please specify a username!"
+        message: "ERROR, please specify a username: x_user header missing"
     }
     static PASS_MISSING = {
         code: 605,
-        message: "ERROR, please specify a password!"
+        message: "ERROR, please specify a password: x_pass header missing"
+    }
+    static EMAIL_MISSING = {
+        code: 606,
+        message: "ERROR, please specify a username: x_email header missing"
+    }
+
+    static USER_CREATION_FAILED = {
+        code: 610,
+        message: "ERROR, user creation failed, see error field for more details"
+    }
+
+    static NO_PERMISSION = {
+        code: 643,
+        message: "ERROR, you do not have the permission to do this!"
     }
 
 
