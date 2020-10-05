@@ -20,11 +20,20 @@ exports.Responses = class Responses{
 
     static respOK (info, data){
         let response = {
-            status: "success",
+            status: "ok",
             info: info,
             data: data
         }
         return response;
     }
     
+    static respPage (info, data,pageData){
+        let response = {
+            status: "ok",
+            info: info,
+            data: data,
+            page: pageData
+        }
+        return response;
+    }
 }

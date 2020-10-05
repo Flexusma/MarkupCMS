@@ -23,7 +23,7 @@ router.get('/create', APINOTsessionChecker ,async function(req, res, next) {
             user.pass = null;
             req.session.user = user;
             req.session.permission = user.permission;
-            return res.json(Responses.respOK(RespCode.TEST_OK,[req.session.user, req.session.permission, req.session.id]));
+            return res.json(Responses.respOK(RespCode.OK,[req.session.user, req.session.permission, req.session.id]));
         }else return res.json(Responses.respError(RespCode.UNAME_OR_PASS_WRONG));
     }else return res.json(Responses.respError(RespCode.UNAME_OR_PASS_WRONG));
     
@@ -31,7 +31,7 @@ router.get('/create', APINOTsessionChecker ,async function(req, res, next) {
 
 router.get('/destroy', APIsessionChecker ,function(req, res, next) {
   req.session.destroy(() => {
-    res.json(Responses.respOK(RespCode.TEST_OK,["You are now logged out"]));
+    res.json(Responses.respOK(RespCode.OK,["You are now logged out"]));
   });
 });
 

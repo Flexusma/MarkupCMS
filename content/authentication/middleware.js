@@ -33,3 +33,22 @@ exports.APIsessionChecker= sessionChecker = (req, res, next) => {
         }
     }    
 };
+
+exports.pagewise = pagewise = (req,res,next) =>{
+    let page = req.query.page;
+    let count = req.query.page_count;
+    let total_pages = 1;
+  
+    if(page===undefined) page=0;
+    if(count===undefined) count=7;
+  
+    let pageData = {
+      page: page,
+      count: count,
+      total_pages: total_pages,
+    }
+  
+    req.pageData =pageData;
+  
+    next();
+}

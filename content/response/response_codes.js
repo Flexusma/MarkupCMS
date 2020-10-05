@@ -37,9 +37,9 @@ exports.RespCode = class RespCode{
     }
 
 
-    static TEST_OK = {
+    static OK = {
         code: 200,
-        message: "Yes, it is working!"
+        message: "Request was handled successfully."
     }
 
 }

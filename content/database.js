@@ -93,6 +93,37 @@ exports.Database = class Database{
         console.info("Data was pulled succesfully");
         return rows;
     }
+    async getPagewise(table_name, pagenum, pagecount, condition){
+        if(this.conn==undefined)
+        await this.setupConn();
+
+        let prepstate_get = "SELECT * FROM "+table_name+" "+condition+" LIMIT "+pagenum*pagecount+", "+(pagecount*pagenum)+pagecount;
+        let prepstate_count = "SELECT count(*) as `count` FROM "+table_name+";";
+
+        let [count_res, fieldsresp1] = await this.conn.query(prepstate_count);
+        
+
+
+        console.log("Getting data from "+table_name+" between ...");
+        let err;
+        let rows,fieldsresp;
+        
+        try{
+            [rows,fieldsresp] = await this.conn.query(prepstate_get);
+        //console.log(rows,fieldsresp)
+        }catch(e){
+            err =e;
+            //console.log(e);
+        }
+        rows.push(count_res[0]);
+        console.log(rows);
+
+
+        if(err!=undefined)
+            return err;
+        console.info("Data was pulled succesfully");
+        return rows;
+    }
 
 
 }
