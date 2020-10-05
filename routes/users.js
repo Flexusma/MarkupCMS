@@ -38,4 +38,15 @@ router.get('/create', APIsessionChecker ,async function(req, res, next) {
   }else res.json(Responses.respError(RespCode.NO_PERMISSION));
 });
 
+router.get('/delete', APIsessionChecker, async function(req, res, next){
+  let user_id = req.query.user_id;
+  let current_user_permission = req.session.permission;
+  let current_user_id = req.session.user.id;
+
+  if(Permission.hasPermission(current_user_permission,Permission.DELETE_USER)){
+
+  }
+  
+});
+
 module.exports = router;

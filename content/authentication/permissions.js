@@ -3,7 +3,7 @@
 exports.Permission = class Permission{
 
     static hasPermission(int, permission){
-        return (int & permission) == permission;
+        return (int & permission) === permission;
     }
 
     static CREATE_USER = 0x1;

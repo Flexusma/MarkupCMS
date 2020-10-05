@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="433c54a6-4dec-4338-ac3f-1ce183f646f3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/MarkupCMS.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/content/authentication/session_utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/changelog.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/debug/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/debug/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/debug/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/debug/dist/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/debug/src/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/debug/src/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/debug/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/debug/src/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/depd/History.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/depd/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/depd/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/depd/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/depd/lib/browser/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/depd/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/HISTORY.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/.coveralls.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/.eslintrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/.npmignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/component.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/src/browser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/src/debug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/src/inspector-log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/debug/src/node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/ms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/ms/license.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/ms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/node_modules/ms/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/session/cookie.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/session/memory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/session/session.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/express-session/session/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/ms/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/ms/license.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/ms/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/ms/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/safe-buffer/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/safe-buffer/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/safe-buffer/index.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/safe-buffer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/node_modules/safe-buffer/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/express-mysql-session/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/underscore/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/underscore/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/underscore/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/underscore/underscore-min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/underscore/underscore-min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/node_modules/underscore/underscore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/authentication/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/authentication/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/authentication/permissions.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/authentication/permissions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/datatypes/user_type.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/datatypes/user_type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/response/response_codes.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/response/response_codes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/comment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1iSrq73FSDrPOQdoGwNoAPEHdYG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="433c54a6-4dec-4338-ac3f-1ce183f646f3" name="Default Changelist" comment="" />
+      <created>1601912021424</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601912021424</updated>
+      <workItem from="1601912022596" duration="18570000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1695" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1601912809672">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1695" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1601912809672" />
+    <state x="1421" y="345" key="SettingsEditor" timestamp="1601912288097">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1421" y="345" key="SettingsEditor/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1601912288097" />
+    <state x="1276" y="236" width="1226" height="1125" key="dock-window-1" timestamp="1601932021713">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1276" y="236" width="1226" height="1125" key="dock-window-1/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1601932021713" />
+    <state x="4054" y="134" width="1226" height="1125" key="dock-window-2" timestamp="1601913432900">
+      <screen x="3840" y="0" width="2560" height="1400" />
+    </state>
+    <state x="4054" y="134" width="1226" height="1125" key="dock-window-2/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1601913432900" />
+  </component>
+</project>

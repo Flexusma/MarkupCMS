@@ -3,6 +3,15 @@ const { query } = require('express');
 const mysql = require('mysql2/promise');
 
 
+async function setupConn(){
+    conn =  await mysql.createConnection({
+        host: process.env.DB_HOST,
+        user: process.env.DB_USER,
+        database: process.env.DB_NAME,
+        password: process.env.DB_PASS
+    });
+    return conn;
+}
 
 exports.Database = class Database{
 // edit the login information to connect to the database
@@ -10,28 +19,19 @@ exports.Database = class Database{
 
     conn;
 
-    async setupConn(){
-            this.conn = await mysql.createConnection({
-                host: process.env.DB_HOST,
-                user: process.env.DB_USER,
-                database: process.env.DB_NAME,
-                password: process.env.DB_PASS
-            });
-    }
-
     constructor(){}
 
     //universal prepared statements
 
     async insertInto(table_name,values,fields) {
-        if(this.conn==undefined)
-            await this.setupConn();
+        if(this.conn===undefined)
+            this.conn = await setupConn();
 
         let prepstate = "INSERT INTO "+table_name+" ("+fields+") VALUES(";
          if(values.length===0) throw new Error("Amount of values can't be zero!");
         let count = 0;
         for(let value in values){
-            if(count==0)prepstate+="? ";
+            if(count===0)prepstate+="? ";
             else prepstate+=", ?";
             count++;
         }
@@ -49,14 +49,14 @@ exports.Database = class Database{
             //console.log(e);
         }
 
-        if(err!=undefined)
+        if(err!==undefined)
             return err;
         return rows;
         
     }
 
     async createTable(table_name,fields,extras){
-        if(this.conn===undefined) return this.setupConn().then(async() =>{
+        if(this.conn===undefined)  this.conn = await setupConn().then(async() =>{
             let prepstate = "CREATE TABLE IF NOT EXISTS "+table_name+" ("+fields+")"+extras+";";
             if(fields.length===0) throw new Error("Amount of Fields can't be zero!");
 
@@ -70,8 +70,8 @@ exports.Database = class Database{
     }
 
     async getFromTable(table_name,field,value) {
-        if(this.conn==undefined)
-            await this.setupConn();
+        if(this.conn===undefined)
+             this.conn = await setupConn();
 
         let prepstate = "SELECT * FROM "+table_name+" WHERE "+field+"= ?;";
          if(value===undefined) throw new Error("Value to compare can't be undefined!");
@@ -88,7 +88,7 @@ exports.Database = class Database{
             //console.log(e);
         }
 
-        if(err!=undefined)
+        if(err!==undefined)
             return err;
         console.info("Data was pulled succesfully");
         return rows;
