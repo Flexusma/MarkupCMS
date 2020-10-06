@@ -1,10 +1,6 @@
-
-const session = require("express-session");
+const {sessionStore} = require("./session_utils");
 const { Responses } = require("../response/responses");
 const { RespCode } = require("../response/response_codes");
-let sessionStore = new session.MemoryStore();
-
-exports.sessionStore = sessionStore;
 
 exports.APINOTsessionChecker= sessionChecker = (req, res, next) => {
     if (req.session.user && req.cookies.user_sid) {
@@ -15,18 +11,21 @@ exports.APINOTsessionChecker= sessionChecker = (req, res, next) => {
 };
 exports.APIsessionChecker= sessionChecker = (req, res, next) => {
 
-    if (req.session.user && req.cookies.user_sid) {
+    if (req.session.id && req.cookies.user_sid) {
         next();
     } else {
-        if(req.headers.authorization){
-            let sess;
-            console.log(req.headers.authorization)
+        if(req.headers.authorization !== undefined){
+            console.log(sessionStore);
             sessionStore.get(req.headers.authorization, (error, session) => {
-                sess = session;
-                if(session!=undefined){
-                    req.session=session;
-                    next();
-                }else res.json(Responses.respError(RespCode.SESSION_INVALID));
+                console.log(error);
+                console.log(session)
+                if(error===null || error===undefined) {
+                    if (session !== undefined&&session != null) {
+                        req.session.user = session.user;
+                        console.log(req.session);
+                        next();
+                    } else res.json(Responses.respError(RespCode.SESSION_INVALID));
+                }else res.json(Responses.respError(RespCode.UNAME_OR_PASS_WRONG,error))
             });
         }else{
             res.json(Responses.respError(RespCode.SESSION_INVALID));

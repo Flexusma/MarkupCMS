@@ -77,7 +77,7 @@ exports.User = class User {
         let last_login = Timestamp.getCurrentTimestamp();
 
         let response = await DB.insertInto("users",[username,email,pas,creation_date,last_login,permission], ["username","email","pass","creation_date","last_login","permission"]);
-        if(response!=undefined)
+        if(response!==undefined)
             if(response instanceof Error)
                 return response;
             else

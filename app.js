@@ -2,15 +2,15 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
-var session = require('express-session');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var postRouter = require('./routes/post');
 var commentRouter = require('./routes/comment');
 var sessionRouter = require('./routes/session');
+const sessionStore = require("./content/authentication/session_utils");
 const { Post } = require('./content/datatypes/post_type');
-const { sessionStore } = require('./content/authentication/middleware');
+let session = sessionStore.session;
 
 var app = express();
 
@@ -25,15 +25,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  key: 'user_sid',
-  store: sessionStore,
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
+    key: 'user_sid',
+    secret: process.env.SESSION_SECRET,
+    store: sessionStore.sessionStore,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
       expires: 600000
-  }
+    }
 }));
+
+
 
 app.use((req, res, next) => {
   if (req.cookies.user_sid && !req.session.user) {
@@ -67,8 +69,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-
-
-if(process.env.DB_SETUP) {
-  Post.createTable();
-}

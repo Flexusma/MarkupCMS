@@ -3,7 +3,7 @@ exports.RespCode = class RespCode{
 
     static SESSION_INVALID = {
         code: 601,
-        message: "ERROR, either you are not logged in, please make sure your cookies are enabled, or you did sent an autorization header corectly!"
+        message: "ERROR, either you are not logged in, please make sure your cookies are enabled, or you did not send an autorization header corectly!"
     }
     static ROUTE_ONLY_UNAUTHENTICATED = {
         code: 602,
