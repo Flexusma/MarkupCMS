@@ -49,8 +49,9 @@ exports.User = class User {
         return resp;
     }
 
-    static getByPage(pagenum, pagesize){
-        if(pagesize===undefined) pagesize=5;
+    static async getPagewise(pagenum, pagecount){
+        let resp = await DB.getPagewise("users",pagenum,pagecount);
+        return resp;
     }
 
     static async createTable() {

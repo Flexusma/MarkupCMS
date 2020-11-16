@@ -16,9 +16,11 @@ exports.Post = class Post {
 
 //static functions
 
-    static getByPage(pagenum, pagesize){
-        if(pagesize===undefined) pagesize=5;
+    static async getPagewise(pagenum, pagecount){
+        let resp = await DB.getPagewise("posts",pagenum,pagecount);
+        return resp;
     }
+
 
     static async createTable() {
         console.info("Creating database for posts");

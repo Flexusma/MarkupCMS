@@ -33,7 +33,7 @@ router.post('/', APIsessionChecker ,async function(req, res, next) {
 
     if(!(user instanceof Error)){
       user.pass = null;
-      return res.json(Responses.respOK(RespCode.TEST_OK, user));
+      return res.json(Responses.respOK(RespCode.OK, user));
     }else return res.json(Responses.respError(RespCode.USER_CREATION_FAILED,user));
   }else res.json(Responses.respError(RespCode.NO_PERMISSION));
 });
