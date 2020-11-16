@@ -1,0 +1,20 @@
+// Fixed navbar
+.navbar.navbar-light.navbar-inverse.sticky-top.navbar-expand-md(role='navigation')
+    .container
+        button.navbar-right.navbar-toggler(type='button' data-toggle='collapse' data-target='.navbar-collapse')
+            span.sr-only Toggle navigation
+            | ☰
+        form.form-inline
+            input.form-control.mr-sm-2(type="search", placeholder="Suchbegriff", aria-label="Suchbegriff")
+            button.btn.btn-outline-primary.my-2.my-sm-0(type="submit") Suchen
+        .navbar-collapse.collapse
+            ul.nav.navbar-nav.ml-auto
+                li.active.nav-item
+                    a.nav-link(href='#') Active
+                li.nav-item
+                    a.nav-link(href='#') Link
+                li.nav-item
+                    a.nav-link(href='#') Link
+                li.nav-item
+                    a.nav-link(href='#') Link
+

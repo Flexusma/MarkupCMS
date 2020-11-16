@@ -18,8 +18,18 @@ exports.Database = class Database{
 
 
     conn;
+    pool = mysql.createPool({
+        host            : process.env.DB_HOST,
+        user            : process.env.DB_USER,
+        password        : process.env.DB_PASS,
+        database        : process.env.DB_NAME,
+        connectionLimit : 20,               // this is the max number of connections before your pool starts waiting for a release
+        multipleStatements : true           // I like this because it helps prevent nested sql statements, it can be buggy though, so be careful
+    });
 
-    constructor(){}
+    constructor(){
+
+    }
 
     //universal prepared statements
 
@@ -56,7 +66,8 @@ exports.Database = class Database{
     }
 
     async createTable(table_name,fields,extras){
-        if(this.conn===undefined)  this.conn = await setupConn().then(async() =>{
+        if(this.conn===undefined)  this.conn = await setupConn();
+
             let prepstate = "CREATE TABLE IF NOT EXISTS "+table_name+" ("+fields+")"+extras+";";
             if(fields.length===0) throw new Error("Amount of Fields can't be zero!");
 
@@ -66,7 +77,6 @@ exports.Database = class Database{
 
             //console.log(rows,fieldsresp);
             return rows;
-        });
     }
 
     async getFromTable(table_name,field,value) {

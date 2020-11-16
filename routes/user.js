@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/create', APIsessionChecker ,async function(req, res, next) {
+router.post('/', APIsessionChecker ,async function(req, res, next) {
   let username = req.headers.x_user;
   let email = req.headers.x_email;
   let permission = req.headers.x_permission;
@@ -38,7 +38,7 @@ router.get('/create', APIsessionChecker ,async function(req, res, next) {
   }else res.json(Responses.respError(RespCode.NO_PERMISSION));
 });
 
-router.get('/delete', APIsessionChecker, async function(req, res, next){
+router.delete('/', APIsessionChecker, async function(req, res, next){
   let user_id = req.query.user_id;
   let current_user_permission = req.session.permission;
   let current_user_id = req.session.user.id;

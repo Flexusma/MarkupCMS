@@ -2,19 +2,20 @@ var express = require('express');
 var router = express.Router();
 
 /* GET posts. */
-router.get('/get/:id', function(req, res, next) {
+router.get('/:id', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.post('/add', function(req, res, next) {
+router.post('/', APIsessionChecker, function(req, res, next) {
+
   res.send('respond with a resource');
 });
-router.post('/edit/:id', function(req, res, next) {
+router.patch('/:id', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.delete('/delete', function(req, res, next) {
+router.delete('/:id', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/get', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 

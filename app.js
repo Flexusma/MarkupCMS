@@ -4,12 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/user');
 var postRouter = require('./routes/post');
 var commentRouter = require('./routes/comment');
 var sessionRouter = require('./routes/session');
 const sessionStore = require("./content/authentication/session_utils");
-const { Post } = require('./content/datatypes/post_type');
 let session = sessionStore.session;
 
 var app = express();
@@ -47,7 +46,7 @@ app.use((req, res, next) => {
 let apidef ="/api";
 
 app.use('/', indexRouter);
-app.use(apidef+'/users', usersRouter);
+app.use(apidef+'/user', usersRouter);
 app.use(apidef+'/post', postRouter);
 app.use(apidef+'/comment', commentRouter);
 app.use(apidef+'/session', sessionRouter);

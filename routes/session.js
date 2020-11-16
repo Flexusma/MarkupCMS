@@ -7,7 +7,7 @@ const { RespCode } = require('../content/response/response_codes');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/create', APINOTsessionChecker ,async function(req, res, next) {
+router.post('/', APINOTsessionChecker ,async function(req, res, next) {
     let username = req.headers.x_user;
     let pass = req.headers.x_pass;
 
@@ -29,7 +29,7 @@ router.get('/create', APINOTsessionChecker ,async function(req, res, next) {
     
 });
 
-router.get('/destroy', APIsessionChecker ,function(req, res, next) {
+router.delete('/', APIsessionChecker ,function(req, res, next) {
   req.session.destroy(() => {
     res.json(Responses.respOK(RespCode.TEST_OK,["You are now logged out"]));
   });
