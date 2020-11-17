@@ -33,6 +33,16 @@ exports.APIsessionChecker= sessionChecker = (req, res, next) => {
     }    
 };
 
+exports.SessionCheckNoBlock = sessionCheckNoBlock = (req,res,next) =>{
+    if (req.session.id && req.cookies.user_sid) {
+        req.logged_in=true;
+        next();
+    } else {
+        req.logged_in=false;
+        next();
+    }
+}
+
 exports.pagewise = pagewise = (req,res,next) =>{
     let page = req.query.page;
     let count = req.query.page_count;
@@ -52,12 +62,3 @@ exports.pagewise = pagewise = (req,res,next) =>{
     next();
 }
 
-exports.SessionCheckNoBlock = sessionCheckNoBlock = (req,res,next) =>{
-    if (req.session.id && req.cookies.user_sid) {
-        req.logged_in=true;
-        next();
-    } else {
-        req.logged_in=false;
-        next();
-    }
-}

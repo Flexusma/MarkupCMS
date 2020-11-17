@@ -81,7 +81,7 @@ exports.User = class User {
             if(response instanceof Error)
                 return response;
             else
-                return new User(response.insertID,username,email,pass,creation_date,last_login,permission);
+                return new User(response.insertId,username,email,pass,creation_date,last_login,permission);
         else return undefined;
     }
 

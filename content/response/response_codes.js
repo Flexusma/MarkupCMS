@@ -31,6 +31,15 @@ exports.RespCode = class RespCode{
         message: "ERROR, user creation failed, see error field for more details"
     }
 
+    static POST_CREATION_FAILED = {
+        code: 611,
+        message: "ERROR, post creation failed, see error field for more details"
+    }
+    static USER_NO_AUTHOR = {
+        code: 612,
+        message: "ERROR, post creation failed, the requesting user does not have an author, please create an author profile first!"
+    }
+
     static NO_PERMISSION = {
         code: 643,
         message: "ERROR, you do not have the permission to do this!"

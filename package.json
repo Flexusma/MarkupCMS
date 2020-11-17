@@ -19,5 +19,8 @@
     "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "yargs": "^16.0.3"
+  },
+  "devDependencies": {
+    "express-validator": "^6.6.1"
   }
 }

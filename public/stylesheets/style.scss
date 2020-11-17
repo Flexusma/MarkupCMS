@@ -1,3 +1,5 @@
+@import "hover_lib/text_hover";
+
 /* *********************************
            Variables
   ********************************** */
@@ -44,6 +46,7 @@ $small-logo-padding: 2px; // of bottom padding to look nice
   ********************************** */
 .big-logo-row {
   background: #ffd700;
+  vertical-align: center;
 
   .big-logo-container {
     padding-top: $navbar-height;
@@ -60,5 +63,18 @@ $small-logo-padding: 2px; // of bottom padding to look nice
     @media (min-width: 630px) { font-size: 7.5em;  }
     @media (min-width: 768px) { font-size: 9em; padding-bottom: $big-logo-padding * 2; }
     @media (min-width: 1200px) { font-size: 12em; }
+  }
+
+  h3 {
+    font-size: 2em;
+    margin:0;
+    padding:0 0 $big-logo-padding 0;
+
+    @media (min-width: 400px) { font-size: 2.5em; }
+    @media (min-width: 440px) { font-size: 3.5em; }
+    @media (min-width: 500px) { font-size: 4.5em; }
+    @media (min-width: 630px) { font-size: 5.5em;  }
+    @media (min-width: 768px) { font-size: 7em; padding-bottom: $big-logo-padding * 2; }
+    @media (min-width: 1200px) { font-size: 10em; }
   }
 }

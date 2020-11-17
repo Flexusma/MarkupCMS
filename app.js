@@ -4,10 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/user');
-var postRouter = require('./routes/post');
-var commentRouter = require('./routes/comment');
-var sessionRouter = require('./routes/session');
+var usersRouter = require('./routes/api/user');
+var postRouter = require('./routes/api/post');
+var commentRouter = require('./routes/api/comment');
+var sessionRouter = require('./routes/api/session');
+var authorRouter = require('./routes/api/author');
 const sessionStore = require("./content/authentication/session_utils");
 let session = sessionStore.session;
 
@@ -50,6 +51,7 @@ app.use(apidef+'/user', usersRouter);
 app.use(apidef+'/post', postRouter);
 app.use(apidef+'/comment', commentRouter);
 app.use(apidef+'/session', sessionRouter);
+app.use(apidef+'/author',authorRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -61,6 +63,10 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  //error hero information
+    res.locals.hero_title=process.env.ERR_PG_TEXT
+    res.locals.hero_icon=process.env.ERR_PG_SYMBOL
 
   // render the error page
   res.status(err.status || 500);

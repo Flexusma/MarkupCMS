@@ -9,12 +9,15 @@
             button.btn.btn-outline-primary.my-2.my-sm-0(type="submit") Suchen
         .navbar-collapse.collapse
             ul.nav.navbar-nav.ml-auto
-                li.active.nav-item
+                li.active.nav-item.text-hover-fill-goes-down
                     a.nav-link(href='#') Active
-                li.nav-item
+                li.nav-item.text-hover-fill-goes-down
                     a.nav-link(href='#') Link
-                li.nav-item
+                li.nav-item.text-hover-fill-goes-down
                     a.nav-link(href='#') Link
-                li.nav-item
-                    a.nav-link(href='#') Link
-
+                if(logged_in)
+                    li.nav-item.text-hover-fill-goes-down
+                        a.nav-link(href='#') Log Out
+                else
+                    li.nav-item.text-hover-fill-goes-down
+                        a.nav-link(href='#') Log in
