@@ -22,23 +22,7 @@
     <list default="true" id="433c54a6-4dec-4338-ac3f-1ce183f646f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/authentication/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/authentication/middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/datatypes/author_type.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/datatypes/author_type.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/datatypes/user_type.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/datatypes/user_type.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/response/response_codes.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/response/response_codes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/hover_lib.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/author.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/author.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/comment.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/comment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/session.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/post.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template1/README.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/template1/about.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/template1/blog.html" beforeDir="false" />
@@ -166,7 +150,6 @@
       <change beforePath="$PROJECT_DIR$/template1/work-single.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/template1/work.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/error.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/error.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.jade" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/utils/header.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/utils/header.jade" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/utils/hero.jade" beforeDir="false" afterPath="$PROJECT_DIR$/views/utils/hero.jade" afterDir="false" />
     </list>
@@ -202,10 +185,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\craft\OneDrive - willigis-online.de\Dokumente\GitKraken\MarkupCMS\routes\api" />
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\craft\OneDrive - willigis-online.de\Dokumente\GitKraken\MarkupCMS\public\stylesheets\hover_lib" />
@@ -238,9 +222,8 @@
       <workItem from="1601912022596" duration="19245000" />
       <workItem from="1602619609398" duration="14000" />
       <workItem from="1604602898163" duration="2365000" />
-      <workItem from="1605538595183" duration="16723000" />
-      <workItem from="1605606696653" duration="1400000" />
-      <workItem from="1605627179697" duration="15659000" />
+      <workItem from="1605538595183" duration="15899000" />
+      <workItem from="1605619823082" duration="1597000" />
     </task>
     <servers />
   </component>
@@ -276,26 +259,35 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1061" y="455" key="FileChooserDialogImpl/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1602619621432" />
-    <state width="1582" height="195" key="GridCell.Tab.0.bottom" timestamp="1605648980513">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1419" height="199" key="GridCell.Tab.0.bottom" timestamp="1605622378933">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1582" height="195" key="GridCell.Tab.0.bottom/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1605648980513" />
-    <state width="1582" height="195" key="GridCell.Tab.0.center" timestamp="1605648980513">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2539" height="195" key="GridCell.Tab.0.bottom/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1605562097417" />
+    <state width="1419" height="199" key="GridCell.Tab.0.bottom/0.25.1440.805@0.25.1440.805" timestamp="1605622378933" />
+    <state width="1417" height="152" key="GridCell.Tab.0.bottom/0.25.1440.807@0.25.1440.807" timestamp="1605619574415" />
+    <state width="1419" height="199" key="GridCell.Tab.0.center" timestamp="1605622378932">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1582" height="195" key="GridCell.Tab.0.center/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1605648980513" />
-    <state width="1582" height="195" key="GridCell.Tab.0.left" timestamp="1605648980513">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2539" height="195" key="GridCell.Tab.0.center/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1605562097416" />
+    <state width="1419" height="199" key="GridCell.Tab.0.center/0.25.1440.805@0.25.1440.805" timestamp="1605622378932" />
+    <state width="1417" height="152" key="GridCell.Tab.0.center/0.25.1440.807@0.25.1440.807" timestamp="1605619574413" />
+    <state width="1419" height="199" key="GridCell.Tab.0.left" timestamp="1605622378922">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1582" height="195" key="GridCell.Tab.0.left/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1605648980513" />
-    <state width="1582" height="195" key="GridCell.Tab.0.right" timestamp="1605648980513">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2539" height="195" key="GridCell.Tab.0.left/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1605562097416" />
+    <state width="1419" height="199" key="GridCell.Tab.0.left/0.25.1440.805@0.25.1440.805" timestamp="1605622378922" />
+    <state width="1417" height="152" key="GridCell.Tab.0.left/0.25.1440.807@0.25.1440.807" timestamp="1605619574412" />
+    <state width="1419" height="199" key="GridCell.Tab.0.right" timestamp="1605622378933">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
-    <state width="1582" height="195" key="GridCell.Tab.0.right/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1605648980513" />
-    <state x="1421" y="345" key="SettingsEditor" timestamp="1601912288097">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="2539" height="195" key="GridCell.Tab.0.right/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1605562097416" />
+    <state width="1419" height="199" key="GridCell.Tab.0.right/0.25.1440.805@0.25.1440.805" timestamp="1605622378933" />
+    <state width="1417" height="152" key="GridCell.Tab.0.right/0.25.1440.807@0.25.1440.807" timestamp="1605619574414" />
+    <state x="456" y="106" key="SettingsEditor" timestamp="1605619792643">
+      <screen x="0" y="25" width="1440" height="809" />
     </state>
     <state x="1421" y="345" key="SettingsEditor/0.0.2560.1400/3840.0.2560.1400@0.0.2560.1400" timestamp="1601912288097" />
+    <state x="456" y="106" key="SettingsEditor/0.25.1440.809@0.25.1440.809" timestamp="1605619792643" />
     <state x="1276" y="236" width="1226" height="1125" key="dock-window-1" timestamp="1602619622814">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
