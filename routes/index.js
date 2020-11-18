@@ -11,7 +11,7 @@ router.get('/', SessionCheckNoBlock, renderW, function(req, res, next) {
 
   req.renderW.render('index',{
     title: 'Express',
-    hero_icon:process.env.MP_HERO_SYMBOL,
+    hero_icon:process.env.MP_HERO_ICON,
     hero_title:process.env.MP_HERO_TEXT
   });
 

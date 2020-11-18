@@ -10,6 +10,8 @@ var router = express.Router();
 router.post('/', APINOTsessionChecker ,async function(req, res, next) {
     let username = req.headers.x_user;
     let pass = req.headers.x_pass;
+    if(username===undefined) username = req.body.x_user;
+    if(pass===undefined) pass = req.body.x_pass;
 
     if(username===undefined) return res.json(Responses.respError(RespCode.UNAME_MISSING));
     if(pass===undefined) return res.json(Responses.respError(RespCode.PASS_MISSING));

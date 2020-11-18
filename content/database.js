@@ -104,8 +104,8 @@ exports.Database = class Database{
         return rows;
     }
     async getPagewise(table_name, pagenum, pagecount, condition){
-        if(this.conn==undefined)
-        await this.setupConn();
+        if(this.conn===undefined)
+            this.conn = await setupConn();
 
         let prepstate_get = "SELECT * FROM "+table_name+" "+condition+" LIMIT "+pagenum*pagecount+", "+(pagecount*pagenum)+pagecount;
         let prepstate_count = "SELECT count(*) as `count` FROM "+table_name+";";
@@ -126,6 +126,8 @@ exports.Database = class Database{
             //console.log(e);
         }
         rows.push(count_res[0]);
+        console.log(Math.ceil(count_res[0].count/pagecount))
+        rows.push({pagecount: Math.ceil(count_res[0].count/pagecount)});
         console.log(rows);
 
 

@@ -10,14 +10,14 @@
         .navbar-collapse.collapse
             ul.nav.navbar-nav.ml-auto
                 li.active.nav-item.text-hover-fill-goes-down
-                    a.nav-link(href='#') Active
+                    a.nav-link(href=home_path) Home
                 li.nav-item.text-hover-fill-goes-down
                     a.nav-link(href='#') Link
                 li.nav-item.text-hover-fill-goes-down
                     a.nav-link(href='#') Link
                 if(logged_in)
                     li.nav-item.text-hover-fill-goes-down
-                        a.nav-link(href='#') Log Out
+                        a.nav-link(href=login_path) Log Out
                 else
                     li.nav-item.text-hover-fill-goes-down
-                        a.nav-link(href='#') Log in
+                        a.nav-link(href=login_path) Log in

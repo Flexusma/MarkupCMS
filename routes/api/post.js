@@ -12,7 +12,7 @@ const { body, validationResult } = require('express-validator');
 var router = express.Router();
 
 /* GET posts. */
-router.get('/:id', function(req, res, next) {
+router.get('/:id(\\d)', function(req, res, next) {
   res.send('respond with a resource');
 });
 router.post('/', APIsessionChecker, [body('title').not().isEmpty(),body('content').not().isEmpty()],async function(req, res, next) {
@@ -49,13 +49,13 @@ router.patch('/:id', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/get', pagewise,async function(req, res, next) {
+router.get('/get',pagewise,async function(req, res, next) {
 
   let users = await User.getPagewise(req.pageData.page, req.pageData.count);
 
-  if (!(users instanceof Error) && users != undefined) {
-    let rowcount = users[Object.keys(users).length - 1].count;
-    req.pageData.total_pages = rowcount;
+  if (!(users instanceof Error) && users !== undefined) {
+    let pagecount = users[users.length-1].pagecount;
+    req.pageData.total_pages = pagecount;
     res.json(Responses.respPage(RespCode.OK, users, req.pageData));
   }
 

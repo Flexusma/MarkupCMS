@@ -5,7 +5,9 @@ const { Permission } = require('../../content/authentication/permissions');
 const { Responses } = require('../../content/response/responses');
 const { RespCode } = require('../../content/response/response_codes');
 const { body, validationResult } = require('express-validator');
+var Router = require('named-routes');
 var router = express.Router();
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {

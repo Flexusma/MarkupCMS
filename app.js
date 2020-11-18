@@ -3,16 +3,25 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//router
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/api/user');
 var postRouter = require('./routes/api/post');
 var commentRouter = require('./routes/api/comment');
 var sessionRouter = require('./routes/api/session');
 var authorRouter = require('./routes/api/author');
+var loginRouter = require('./routes/login');
+var Router = require('named-routes')
+var router = new Router();
+
+
 const sessionStore = require("./content/authentication/session_utils");
 let session = sessionStore.session;
 
 var app = express();
+
+router.extendExpress(app);
+router.registerAppHelpers(app);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,8 +54,11 @@ app.use((req, res, next) => {
 });
 
 let apidef ="/api";
+//normal router
+app.use(process.env.ROUTE_URL_HOME, indexRouter);
+app.use(process.env.ROUTE_URL_LOGIN,loginRouter);
 
-app.use('/', indexRouter);
+//api router
 app.use(apidef+'/user', usersRouter);
 app.use(apidef+'/post', postRouter);
 app.use(apidef+'/comment', commentRouter);
@@ -73,4 +85,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
 module.exports = app;
+
+
