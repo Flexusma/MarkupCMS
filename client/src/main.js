@@ -1,44 +1,69 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from '@/App'
 import router from './router'
 import './../node_modules/bulma/css/bulma.css';
 import $ from "jquery";
+import {initAuthService} from "@/auth/authService";
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 
+axios.defaults.withCredentials = true;
+Vue.use(VueAxios, axios);
+
+
+/*
+
+CONSTANT VALUES AND OTHER SETTINGS
+
+ */
 const api_base_url="http://localhost:3000/api"
 const api_token_check_url="/post";
-let was_auth=false;
 
-let api={
+export let api={
   api_base_url: api_base_url,
   api_token_check_url: api_token_check_url,
-  was_auth: was_auth,
+  //paths
+  api_session_path: "/session",
+  api_post_path: "/post",
+
 }
-let constants={
+export let constant={
   error_page_name: "error",
   login_page_name: "login",
+  home_page_name: "home",
 }
 
-let lang={
+export let lang={
   err_could_not_verify_login:"Entschuldige, etwas ist bei der Überprüfung deines Login-Status schiefgelaufen... Vieleicht hilft es, die Seite neu zu Laden, oder dich neu einzuloggen."
 }
 
-let error_msg={
+export let error_msg={
   could_not_verify_login: {
     code: 1001,
     message: lang.err_could_not_verify_login
   }
 }
-exports.api=api;
-exports.constants=constants;
-exports.lang=lang;
-exports.error_msg=error_msg;
+
+
+/*
+
+END OF SETTINGS
+
+ */
+
+initAuthService(Vue);
 
 Vue.config.productionTip = true
 
 new Vue({
-  router,
-  render: h => h(App)
+  router  ,
+  render: h => h(App),
+  data:{
+
+  }
 }).$mount('#app')
+
+
 
 //CUSTOM SCRIPTS
 

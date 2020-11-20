@@ -49,21 +49,15 @@ router.patch('/:id', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/get',pagewise,async function(req, res, next) {
+router.get('/',pagewise,async function(req, res, next) {
 
-  let users = await User.getPagewise(req.pageData.page, req.pageData.count);
+  let posts = await Post.getPagewise(req.pageData.page, req.pageData.count);
 
-  if (!(users instanceof Error) && users !== undefined) {
-    let pagecount = users[users.length-1].pagecount;
+  if (!(posts instanceof Error) && posts !== undefined) {
+    let pagecount = posts[posts.length-1].pagecount;
     req.pageData.total_pages = pagecount;
-    res.json(Responses.respPage(RespCode.OK, users, req.pageData));
+    res.json(Responses.respPage(RespCode.OK, posts, req.pageData));
   }
 
 });
-
-
-router.get('/', APIsessionChecker,function(req, res, next) {
-  res.send('respond with a resource');
-});
-
 module.exports = router;

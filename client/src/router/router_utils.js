@@ -1,9 +1,9 @@
-const {constants} = require("@/main");
+import {constant} from "@/main";
 
-exports.ErrorRedir = function ErrorRedir(error,message){
-    this.router.push({name:constants.error_page_name, params:{error: error, message: message}});
+export function ErrorRedir(error,message){
+    this.router.push({name:constant.error_page_name, params:{error: error, message: message}});
 }
 
-exports.NextErrorRedir = function NextErrorRedir(error,message,next){
-    next({name:constants.error_page_name, params:{error: error, message: message}});
+export function NextErrorRedir(error,message,next){
+    next({name:constant.error_page_name, params:{error: error, message: message}});
 }

@@ -9,7 +9,8 @@ var postRouter = require('./routes/api/post');
 var commentRouter = require('./routes/api/comment');
 var sessionRouter = require('./routes/api/session');
 var authorRouter = require('./routes/api/author');
-var Router = require('named-routes')
+var Router = require('named-routes');
+var cors = require('cors');
 var router = new Router();
 
 
@@ -30,6 +31,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.use(cors({
+    origin: [
+        'http://localhost:8080',
+        'https://localhost:8080'
+    ],
+    credentials: true,
+    exposedHeaders: ['set-cookie']
+}));
 
 app.use(session({
     key: 'user_sid',

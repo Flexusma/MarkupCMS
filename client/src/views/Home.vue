@@ -16,15 +16,15 @@
       </div>
     </div>
   </section>
-  <EventsList />
+  <PostList />
 </div>
 </template>
 <script>
-import EventsList from '../components/EventsList';
+import PostList from '../components/PostList';
 export default {
   name: 'home',
   components: {
-    EventsList
+    PostList
   },
   methods: {
     // Log the user in
