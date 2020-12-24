@@ -1,55 +1,79 @@
 <template>
-  <div class="event-card">
-    <div class="card">
-      <div class="card-content">
-        <h2 class="is-size-4 has-text-weight-bold">{{ event.name }}</h2>
-        <small class="event-date">{{ event.date }}</small>
-        <span>{{ event.location }}</span>
-      </div>
+  <section class="post-item">
+    <header class="post-item-header">
+      <p class="post-item-meta">
+        <a v-if="post.creation_date!==undefined" class="post-item-category category-js">{{getDate(post.creation_date)}}</a>
+      </p>
+      <h2 v-if="post.title===undefined" class="post-item-title">Ladefehler</h2>
+      <h2 v-else class="post-item-title">{{post.title}}</h2>
+
+    </header>
+
+    <div class="post-item-description">
+      <p v-if="getShort(post.content)===undefined">
+        Es ist ein Fehler beim Laden des Inhalts aufgetreten :c
+      </p>
+      <p v-else>
+        {{getShort(post.content)}}
+      </p>
+
     </div>
-  </div>
+
+    <footer class="post-item-footer">
+      <a class="post-item-more" href="#">Read Full Post</a>
+    </footer>
+  </section>
 </template>
 <script>
+var dateFormat = require('dateformat');
 export default {
-  props: ["event"]
+  props: ["post"],
+  methods:{
+    getDate(data){
+     let date = new Date(Date.parse(data.replace(/[-]/g,'/')));
+     let fdate = dateFormat(date,"d-mm-yyyy");
+      return fdate;
+    },
+    getShort(data){
+      return data.slice(0,300);
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
-.card {
-  background-image: url("https://placekitten.com/400/400");
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-  text-align: center;
-}
-.card-content {
-  padding-top: 50px;
-  position: absolute;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.35);
-  top: 0;
-  padding: 10px;
-  height: 200px;
-  width: 100%;
-  span {
-    font-size: 18px;
-    text-align: center;
-    width: 100%;
-    position: absolute;
-    bottom: 10px;
-    right: 0;
-  }
-  h2 {
-    margin-top: 10px;
+.post-item {
+  padding: 10px 20px;
+  margin: 20px 0;
+  border-left: 1px solid #EEE;
+  &:hover {
+    background-color: #ddd;
   }
 }
-.event-date {
-  background-color: #151515;
+
+.post-item-header {
+  border-bottom: 2px solid #000;
+}
+
+.post-item-title {
+  font-size: 2em;
+  color: #222;
+  margin-bottom: 0.2em;
+  font-weight: bold;
+}
+
+.post-item-category {
+  margin: 0 0.1em;
+  padding: 0.3em 1em;
   color: #fff;
-  font-size: 0.75em;
-  padding: 2px 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
+  background: #000;
+  font-size: 80%;
+  text-decoration: none;
+}
+
+.post-item-more {
+  text-transform: uppercase;
+  border: 1px solid #000;
+  padding: 2px 8px;
+  margin: 0;
 }
 </style>

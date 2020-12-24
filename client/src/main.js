@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import App from '@/App'
 import router from './router'
-import './../node_modules/bulma/css/bulma.css';
+import './../node_modules/bootstrap/scss/bootstrap.scss';
+import './../node_modules/bootstrap/dist/js/bootstrap';
 import $ from "jquery";
 import {initAuthService} from "@/auth/authService";
 import axios from 'axios';
@@ -24,6 +25,7 @@ export let api={
   api_token_check_url: api_token_check_url,
   //paths
   api_session_path: "/session",
+  api_session_check_path: "/session/check",
   api_post_path: "/post",
 
 }
@@ -55,15 +57,13 @@ initAuthService(Vue);
 
 Vue.config.productionTip = true
 
-new Vue({
+export const vue = new Vue({
   router  ,
   render: h => h(App),
   data:{
-
+    isAuth:  undefined,
   }
 }).$mount('#app')
-
-
 
 //CUSTOM SCRIPTS
 

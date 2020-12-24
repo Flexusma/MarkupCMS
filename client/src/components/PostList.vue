@@ -4,8 +4,11 @@
     <div class="columns is-multiline">
       <div v-for="post in posts" :event="post" :key="post.id" class="column is-one-quarter">
         <router-link :to="`/post/${post.id}`">
-          <PostCard :event="post" />
+          <PostCard :post="post" />
         </router-link>
+      </div>
+      <div v-if="posts.length===0">
+        <p>No Posts available</p>
       </div>
     </div>
   </div>

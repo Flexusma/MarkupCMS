@@ -24,6 +24,14 @@ export default new Router({
       name: 'postSingle',
       component: () => import('../views/PostSingle.vue'),
       beforeEnter: authGuard
+    },
+
+    //auth
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/auth/Login')
     }
+
   ]
 })

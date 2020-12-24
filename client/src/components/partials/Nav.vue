@@ -1,42 +1,39 @@
 <template>
-<nav class="navbar container" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <strong class="is-size-4">Animal Rescue League</strong>
-    </a>
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div id="navbar" class="navbar-menu">
-    <div class="navbar-start">
-      <router-link to="/" class="navbar-item">Home</router-link>
-      <router-link to="/about" class="navbar-item">About</router-link>
-    </div>
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="buttons">
-          <!-- Check that the SDK client is not currently loading before accessing is methods -->
-            <!-- show login when not authenticated -->
-            <a v-if="!$auth.isAuthenticated" @click="login" class="button is-dark"><strong>Sign in</strong></a>
-            <!-- show logout when authenticated -->
-            <a v-if="$auth.isAuthenticated" @click="logout" class="button is-dark"><strong>Log out</strong></a>
-        </div>
+  <div class="navbar navbar-light navbar-inverse sticky-top navbar-expand-md" role="navigation">
+    <div class="container">
+      <button class="navbar-right navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span>☰</button>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Suchbegriff" aria-label="Suchbegriff" />
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Suchen</button>
+      </form>
+      <div class="navbar-collapse collapse" :key="$root.$data.isAuth">
+        <ul class="nav navbar-nav ml-auto">
+          <li class="active nav-item text-hover-fill-goes-down"><a @click="$auth.push('home')" class="nav-link">Home</a></li>
+          <li class="nav-item text-hover-fill-goes-down"><a  class="nav-link" href="">Link</a></li>
+          <li class="nav-item text-hover-fill-goes-down"><a  class="nav-link" href="">Link</a></li>
+          <li v-if="!this.$root.$data.isAuth" class="nav-item text-hover-fill-goes-down"><a @click="login" class="nav-link">Log in</a></li>
+          <li v-else class="nav-item text-hover-fill-goes-down"><a  @click="logout" class="nav-link">Log out</a></li>
+        </ul>
       </div>
     </div>
   </div>
-</nav>
 </template>
 <script>
+
 export default {
   name: 'Nav',
   methods: {
   // Log the user in
   login() {
     this.$auth.loginRedirect();
+    this.$auth.checkAuthReq();
+    return;
   },
+    push(to){
+        if(this.$route.name!==to){
+            this.$router.push({name: to});
+        }
+    },
   // Log the user out
   logout() {
     this.$auth.logout({
@@ -57,5 +54,8 @@ export default {
         color: #d88d00;
       }
     }  
-  } 
+  }
+  a{
+    cursor: pointer;
+  }
 </style>

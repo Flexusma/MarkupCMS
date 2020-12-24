@@ -17,6 +17,8 @@ var router = new Router();
 const sessionStore = require("./content/authentication/session_utils");
 let session = sessionStore.session;
 
+if(process.env==undefined) throw new Error("No ENV loaded! / .env missing")
+
 var app = express();
 
 router.extendExpress(app);
@@ -42,10 +44,12 @@ app.use(cors({
     exposedHeaders: ['set-cookie']
 }));
 
+if(process.env.SESSION_SECRET ===undefined ||process.env.SESSION_SECRET=="") throw new Error("No secret in env provided!");
+
 app.use(session({
     key: 'user_sid',
-    secret: process.env.SESSION_SECRET,
     store: sessionStore.sessionStore,
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {

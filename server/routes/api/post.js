@@ -55,6 +55,8 @@ router.get('/',pagewise,async function(req, res, next) {
 
   if (!(posts instanceof Error) && posts !== undefined) {
     let pagecount = posts[posts.length-1].pagecount;
+    posts = posts.slice(0,-1);
+    console.log(posts);
     req.pageData.total_pages = pagecount;
     res.json(Responses.respPage(RespCode.OK, posts, req.pageData));
   }

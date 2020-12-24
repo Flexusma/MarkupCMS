@@ -5,6 +5,7 @@ import AuthServiceInstance from "@/auth/authService";
 export default {
   async getPosts() {
     let res = await AuthServiceInstance.authAxiosNoRed(axios.get(api.api_base_url+api.api_post_path));
+    console.log(res);
     return res.data;
   },
   async getPostSingle(postId) {

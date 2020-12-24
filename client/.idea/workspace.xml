@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="720dbca9-f8aa-403e-8ab6-3ac043c7a7cd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/authGuard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/authGuard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auth/authService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/auth/authService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/partials/Nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/partials/Nav.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/PostService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/PostService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/About.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/content/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/content/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/node_modules/acorn/bin/build-acorn.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/node_modules/acorn/bin/build-acorn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/node_modules/acorn/bin/generate-identifier-regex.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/node_modules/acorn/bin/generate-identifier-regex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/node_modules/acorn/bin/update_authors.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../server/node_modules/acorn/bin/update_authors.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/node_modules/with/node_modules/acorn/bin/update_authors.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../server/node_modules/with/node_modules/acorn/bin/update_authors.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/node_modules/with/node_modules/acorn/bin/without_eval" beforeDir="false" afterPath="$PROJECT_DIR$/../server/node_modules/with/node_modules/acorn/bin/without_eval" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/routes/api/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/routes/api/post.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/routes/api/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/../server/routes/api/session.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1m7kMe0VnjlIMBfWTJSWrgRt4Cq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="720dbca9-f8aa-403e-8ab6-3ac043c7a7cd" name="Default Changelist" comment="" />
+      <created>1608851969912</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608851969912</updated>
+      <workItem from="1608851971083" duration="152000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

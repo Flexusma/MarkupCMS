@@ -37,4 +37,8 @@ router.delete('/', APIsessionChecker ,function(req, res, next) {
   });
 });
 
+router.get('/check', APIsessionChecker ,function(req, res, next) {
+    res.json(Responses.respOK(RespCode.OK,req.session.user));
+});
+
 module.exports = router;

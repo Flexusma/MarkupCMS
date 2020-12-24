@@ -125,9 +125,9 @@ exports.Database = class Database{
             err =e;
             //console.log(e);
         }
-        rows.push(count_res[0]);
         console.log(Math.ceil(count_res[0].count/pagecount))
-        rows.push({pagecount: Math.ceil(count_res[0].count/pagecount)});
+        rows.push({pagecount: Math.ceil(count_res[0].count/pagecount),
+                count: count_res[0].count});
         console.log(rows);
 
 
