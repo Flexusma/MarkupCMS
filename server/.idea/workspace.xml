@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66a1b3a5-fb5b-4e2a-af53-59bd855efa2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/PostCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/PostCard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/PostList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/PostList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/partials/Hero.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/partials/Hero.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/services/PostService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/services/PostService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/content/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/post.js" afterDir="false" />
-    </list>
+    <list default="true" id="66a1b3a5-fb5b-4e2a-af53-59bd855efa2a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,6 +58,7 @@
       <workItem from="1608804012885" duration="415000" />
       <workItem from="1608804512812" duration="8873000" />
       <workItem from="1608850217551" duration="461000" />
+      <workItem from="1608851938928" duration="298000" />
     </task>
     <servers />
   </component>

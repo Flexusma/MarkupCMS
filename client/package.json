@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "bootstrap": "^4.5.3",
     "bulma": "^0.8.0",
     "core-js": "^3.3.2",
     "dateformat": "^4.4.1",
