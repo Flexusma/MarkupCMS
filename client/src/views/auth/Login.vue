@@ -2,13 +2,11 @@
   <section id="login">
   <section id="hero">
     <!--not authenticated-->
-    <transition name="fade">
-    <div v-if="!this.$auth.isAuthenticated()" class="login">
+    <div v-if="!$auth.isAuthenticated()" class="login">
       <Hero title="Login" desc="Hey, do you have an account? Yes? Then let's log in!"/>
     </div>
-      </transition>
     <!--already authenticated-->
-      <div v-if="this.$auth.isAuthenticated()" >
+      <div v-else >
         <Hero title="Successully logged in" desc="You can't log in again if that was what you were trying ;)" button2="Back Home" button2_href="home"/>
     </div>
 
@@ -17,14 +15,14 @@
     <section id="form" class="">
   <div class="login-page">
     <transition name="fade">
-      <div v-if="!this.$auth.isAuthenticated()" class="wallpaper-login"></div>
+      <div v-if="!$auth.isAuthenticated()" class="wallpaper-login"></div>
     </transition>
     <div class="wallpaper-loggedin"></div>
 
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
-          <div v-if="!this.$auth.isAuthenticated()" class="card login" v-bind:class="{ error: emptyFields }">
+          <div v-if="!$auth.isAuthenticated()" class="card login" v-bind:class="{ error: emptyFields }">
             <h1>Sign In</h1>
             <p v-bind:v-text="error" >{{error}}</p>
             <form v-on:submit.prevent="doLogin" class="form-group">

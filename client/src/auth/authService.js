@@ -116,17 +116,40 @@ class AuthService{
         })
     }
 
+    async checkAuthReqAsync(){
+        const res = await axios.get(api.api_base_url+api.api_session_check_path);
+
+            console.log(res.data);
+            if(res.data.info.code===200) {
+                this.setAuth(true)
+                this.user=res.data.data;
+            }
+            else{
+                this.setAuth(false)
+            }
+    }
+
+    async isAuthUser(){
+        await this.checkAuthReqAsync();
+        return {
+            isAuth: this.getAuth(),
+            user: this.user
+        };
+
+    }
+
     push(to){
-        if(vue.$route.name!==to){
-            vue.$router.push({name: to});
+        console.log(vue)
+        if(vue.config.globalProperties.$route.name!==to){
+            vue.config.globalProperties.$router.push({name: to});
         }
     }
     setAuth(t){
-      vue.$root.$data.isAuth = t;
+      vue.isAuth = t;
     }
     getAuth(){
         if(vue!==undefined)
-            return vue.$root.$data.isAuth;
+            return vue.isAuth;
         else return undefined;
     }
 
@@ -141,6 +164,7 @@ export default AuthServiceInstance;
 export function initAuthService(vue){
 
     AuthServiceInstance.checkAuthReq();
-    vue.prototype.$auth=AuthServiceInstance;
+    console.log(vue)
+    vue.config.globalProperties.$auth=AuthServiceInstance;
 
 }

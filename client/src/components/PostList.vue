@@ -36,7 +36,7 @@ export default {
       PostService.getPosts()
       .then(
         (posts => {
-          this.$set(this, "posts", posts);
+          this.posts=posts;
         }).bind(this)
       );
     }

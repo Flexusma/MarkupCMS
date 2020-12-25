@@ -24,7 +24,7 @@
             </div>
           </li>
 
-          <li v-if="!this.$root.$data.isAuth" class="nav-item text-hover-fill-goes-down"><a @click="login" class="nav-link">Log in</a></li>
+          <li v-if="!$root.$data.isAuth" class="nav-item text-hover-fill-goes-down"><a @click="login" class="nav-link">Log in</a></li>
           <li v-else class="nav-item text-hover-fill-goes-down"><a  @click="logout" class="nav-link">Log out</a></li>
         </ul>
       </div>
@@ -57,6 +57,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
+.dropdown.text-hover-fill-goes-down{
+  padding-left: 0;
+  padding-right: 0;
+  overflow: visible;
+}
 
 .dropdown-menu{
   background: transparent;
