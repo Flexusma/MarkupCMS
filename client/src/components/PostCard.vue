@@ -10,7 +10,7 @@
     </header>
 
     <div class="post-item-description">
-      <p v-if="getShort(post.content)===undefined">
+      <p v-if="post.content===undefined">
         Es ist ein Fehler beim Laden des Inhalts aufgetreten :c
       </p>
       <p v-else>

@@ -3,10 +3,14 @@ import App from '@/App'
 import router from './router'
 import './../node_modules/bootstrap/scss/bootstrap.scss';
 import './../node_modules/bootstrap/dist/js/bootstrap';
+import './../node_modules/bootstrap/dist/js/bootstrap.bundle'
+import './styles/hover_lib/text_hover.scss';
 import $ from "jquery";
 import {initAuthService} from "@/auth/authService";
 import axios from 'axios';
 import VueAxios from 'vue-axios';
+import 'tinymce/tinymce';
+
 
 axios.defaults.withCredentials = true;
 Vue.use(VueAxios, axios);

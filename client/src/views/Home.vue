@@ -30,13 +30,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
   .hero {    
     text-align: center;
     background: #FFD700;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 400px;
+
   }
 
   .button-block {
@@ -60,4 +61,8 @@ export default {
   .is-xl {
     font-size: 1.7rem;
   }
+  .hero-body{
+    padding-bottom: 3em;
+  }
+
 </style>

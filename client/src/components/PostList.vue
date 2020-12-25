@@ -1,5 +1,5 @@
 <template>
-  <div class="events container">
+  <div class="events">
     <h2 class="subtitle is-3">Check out our upcoming events</h2>
     <div class="columns is-multiline">
       <div v-for="post in posts" :event="post" :key="post.id" class="column is-one-quarter">
@@ -47,5 +47,9 @@ export default {
 .events {
   margin-top: 100px;
   text-align: center;
+}
+
+a:hover{
+  text-decoration: none;
 }
 </style>

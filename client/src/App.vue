@@ -28,8 +28,6 @@ html{
            Variables
   ********************************** */
 $navbar-height: 50px;
-$big-logo-padding: 15px; // adjust these 2 values
-$small-logo-padding: 2px; // of bottom padding to look nice
 
 
 /* *********************************
@@ -49,62 +47,6 @@ $main-color: #FFD700;
 .nav-item.active{
   text-underline: black;
   text-decoration: underline;
-}
-
-/* *********************************
-           Toolbar Logo
-  ********************************** */
-.small-logo-container {
-  padding-top: $navbar-height;
-  height: $navbar-height;
-  overflow: hidden;
-  position: absolute;
-}
-
-.small-logo {
-  color: white;
-  font-size: 2.5em;
-  padding-bottom: $small-logo-padding;
-}
-
-/* *********************************
-           Big Logo
-  ********************************** */
-.big-logo-row {
-  background: $main-color;
-  vertical-align: center;
-
-  .big-logo-container {
-    padding-top: $navbar-height;
-  }
-
-  h1 {
-    font-size: 4em;
-    margin:0;
-    padding:0 0 $big-logo-padding 0;
-    text-align: left;
-
-    @media (min-width: 400px) { font-size: 4.5em; }
-    @media (min-width: 440px) { font-size: 5.5em; }
-    @media (min-width: 500px) { font-size: 6.5em; }
-    @media (min-width: 630px) { font-size: 7.5em;  }
-    @media (min-width: 768px) { font-size: 9em; padding-bottom: $big-logo-padding * 2; }
-    @media (min-width: 1200px) { font-size: 12em; }
-  }
-
-  h3 {
-    font-size: 2em;
-    margin:0;
-    padding:0 0 $big-logo-padding 0;
-    text-align: left;
-
-    @media (min-width: 400px) { font-size: 2.5em; }
-    @media (min-width: 440px) { font-size: 3.5em; }
-    @media (min-width: 500px) { font-size: 4.5em; }
-    @media (min-width: 630px) { font-size: 5.5em;  }
-    @media (min-width: 768px) { font-size: 7em; padding-bottom: $big-logo-padding * 2; }
-    @media (min-width: 1200px) { font-size: 10em; }
-  }
 }
 
 

@@ -31,7 +31,13 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: () => import('../views/auth/Login')
-    }
+    },
+    //create
+    {
+      path: '/create/post',
+      name: 'post_create',
+      component: () => import('../views/create/Post_create')
+    },
 
   ]
 })
