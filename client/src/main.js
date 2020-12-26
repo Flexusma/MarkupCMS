@@ -1,6 +1,6 @@
-import Vue from 'vue'
+import {createApp} from 'vue'
 import App from '@/App'
-import router from './router'
+import router from './router/index'
 import './../node_modules/bootstrap/scss/bootstrap.scss';
 import './../node_modules/bootstrap/dist/js/bootstrap';
 import './../node_modules/bootstrap/dist/js/bootstrap.bundle'
@@ -9,11 +9,19 @@ import $ from "jquery";
 import {initAuthService} from "@/auth/authService";
 import axios from 'axios';
 import VueAxios from 'vue-axios';
-import 'tinymce/tinymce';
+
+import  'tinymce/tinymce';
+
+// Default icons are required for TinyMCE 5.3 or above
+import 'tinymce/icons/default';
+
+// A theme is also required
+import 'tinymce/themes/silver';
+
+
 
 
 axios.defaults.withCredentials = true;
-Vue.use(VueAxios, axios);
 
 
 /*
@@ -31,6 +39,7 @@ export let api={
   api_session_path: "/session",
   api_session_check_path: "/session/check",
   api_post_path: "/post",
+  api_image_path: "/image",
 
 }
 export let constant={
@@ -40,7 +49,8 @@ export let constant={
 }
 
 export let lang={
-  err_could_not_verify_login:"Entschuldige, etwas ist bei der Überprüfung deines Login-Status schiefgelaufen... Vieleicht hilft es, die Seite neu zu Laden, oder dich neu einzuloggen."
+  err_could_not_verify_login:"Entschuldige, etwas ist bei der Überprüfung deines Login-Status schiefgelaufen... Vieleicht hilft es, die Seite neu zu Laden, oder dich neu einzuloggen.",
+
 }
 
 export let error_msg={
@@ -55,7 +65,7 @@ export let error_msg={
 
 END OF SETTINGS
 
- */
+
 
 initAuthService(Vue);
 
@@ -68,6 +78,24 @@ export const vue = new Vue({
     isAuth:  undefined,
   }
 }).$mount('#app')
+ */
+
+
+export const vue = createApp(App,{
+  data:function() {
+    return {
+        isAuth:undefined,
+      };
+    }
+    });
+    vue.use(VueAxios,axios)
+    vue.use(router)
+    vue.mount('#app');
+console.log(vue.config)
+initAuthService(vue);
+
+
+
 
 //CUSTOM SCRIPTS
 

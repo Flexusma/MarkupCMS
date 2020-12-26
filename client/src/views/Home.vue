@@ -4,7 +4,7 @@
     <div class="hero-body">
       <Hero title="Welcome to MCMS" desc="This is a random description text"/>
       <div class="button-block">
-        <button v-if="!this.$root.$data.isAuth" @click="login" class="button is-xl is-dark">Sign Up to Browse Events</button>
+        <button v-if="!$data.isAuth" @click="login" class="button is-xl is-dark">Sign Up to Browse Events</button>
         <h3 v-else class="is-size-3 has-background-dark welcome">Welcome, {{ $auth.user.username }}!</h3>
       </div>
     </div>

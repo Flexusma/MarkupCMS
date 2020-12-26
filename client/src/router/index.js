@@ -1,13 +1,14 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+
+import {createRouter, createWebHistory} from 'vue-router'
 import Home from '../views/Home.vue'
 import { authGuard } from "@/auth/authGuard";
+import Permission from "@/auth/permission";
 
-Vue.use(Router)
 
-export default new Router({
-  mode: 'history',
+export default createRouter({
+  mode: "history",
   base: process.env.BASE_URL,
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -36,8 +37,22 @@ export default new Router({
     {
       path: '/create/post',
       name: 'post_create',
-      component: () => import('../views/create/Post_create')
+      meta:addMeta(Permission.CREATE_POST,Permission.CREATE_USER),
+      component: () => import('../views/create/Post_create'),
+      beforeEnter: authGuard
     },
 
   ]
 })
+
+function addMeta(...perms) {
+  let perm =0;
+  console.log(perms)
+  for(const per of perms){
+    perm=perm||per;
+    console.log(perm)
+  }
+  return{
+    permission: perm,
+  }
+}
