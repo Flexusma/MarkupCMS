@@ -39,6 +39,7 @@ export let api={
   api_session_path: "/session",
   api_session_check_path: "/session/check",
   api_post_path: "/post",
+  api_image_path: "/image",
 
 }
 export let constant={

@@ -9,9 +9,12 @@ var postRouter = require('./routes/api/post');
 var commentRouter = require('./routes/api/comment');
 var sessionRouter = require('./routes/api/session');
 var authorRouter = require('./routes/api/author');
+var imageRouter = require('./routes/api/image');
 var Router = require('named-routes');
 var cors = require('cors');
 var router = new Router();
+var fileUpload = require('express-fileupload');
+var fs = require('fs');
 
 
 const sessionStore = require("./content/authentication/session_utils");
@@ -33,6 +36,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(fileUpload({
+    limits:{
+        fieldSize: 67108864,
+    },
+    safeFileNames: true,
+}));
+
+
+//setup image save directory
+
+
+exports.fileSaveDir = dir = './public/storage/images';
+
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir, {recursive: true});
+}
 
 
 app.use(cors({
@@ -74,6 +94,7 @@ app.use(apidef+'/post', postRouter);
 app.use(apidef+'/comment', commentRouter);
 app.use(apidef+'/session', sessionRouter);
 app.use(apidef+'/author',authorRouter);
+app.use(apidef+'/image',imageRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

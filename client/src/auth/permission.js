@@ -16,5 +16,7 @@ export default class Permission{
     static DELETE_POST = 0x80;
     static EDIT_POST = 0x100;
 
+    static IMAGE_UPLOAD = 0x200;
+    static IMAGE_DELETE = 0x400;
 
 }

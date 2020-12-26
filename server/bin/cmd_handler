@@ -6,6 +6,7 @@ const { Permission } = require('../content/authentication/permissions');
 const { Author } = require('../content/datatypes/author_type');
 const { Post } = require('../content/datatypes/post_type');
 const { User } = require('../content/datatypes/user_type');
+const { Image } = require('../content/datatypes/image_type');
 
 let user;
 
@@ -26,6 +27,7 @@ exports.doCmd= async function doCmd(args) {
           await User.createTable();
           await Author.createTable();
           await Post.createTable();
+          await Image.createTable();
           console.log("Created Database successfully");
           user = await User.new("flexusma","info@f.de","abc",Permission.CREATE_USER|Permission.CREATE_AUTHOR|Permission.CREATE_POST);
           if(user instanceof Error) console.log(user);

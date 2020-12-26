@@ -40,10 +40,20 @@ exports.RespCode = class RespCode{
         message: "ERROR, post creation failed, the requesting user does not have an author, please create an author profile first!"
     }
 
+    static NO_POST_DATA = {
+        code: 613,
+        message: "ERROR, no Post data was recieved (length = 0)!"
+    }
+    static IMAGE_SAVE_ERROR = {
+        code: 614,
+        message: "ERROR, could not save the uploaded image!"
+    }
+
     static NO_PERMISSION = {
         code: 643,
         message: "ERROR, you do not have the permission to do this!"
     }
+
 
 
     static OK = {
