@@ -49,10 +49,31 @@ exports.RespCode = class RespCode{
         message: "ERROR, could not save the uploaded image!"
     }
 
+    static AUTHOR_CREATION_FAILED = {
+        code: 615,
+        message: "ERROR, author creation failed, see error field for more details"
+    }
+
+    static ALREADY_EXISTS = {
+        code: 616,
+        message: "ERROR, already exists, see error field for more details"
+    }
+
+    static DOESNT_EXIST_REFERENCE = {
+        code: 617,
+        message: "ERROR, a non existing object was referenced. For example a user ID for a user that doesn't exist, see error field for more details"
+    }
+
+    static MISSING_FIELD = {
+        code: 617,
+        message: "ERROR, a field or variable was missing in your request, see error field for more details"
+    }
+
     static NO_PERMISSION = {
         code: 643,
         message: "ERROR, you do not have the permission to do this!"
     }
+
 
 
 

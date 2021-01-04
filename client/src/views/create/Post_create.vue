@@ -1,7 +1,7 @@
 <template>
   <section id="editor">
     <Hero title="New Post"/>
-    <div class="container">
+    <div class="container-fluid">
 
       <input type="text" class="form-control mt-3 mb-3 " v-model="title" placeholder="Titel eingeben">
 
@@ -27,7 +27,7 @@
       />
       <input type="button" class="mt-3" value="Absenden" @click="submit()">
       <p>{{title +" "+content}}</p>
-      <h3>Error: {{error_msg}}</h3>
+      <Modal mid="postinfo" title="An error occured" :body="error_msg + '\nPost was saved as a draft locally in your browser, you can load it with the restore button on the right side of the toolbar, after reloading the page.'" :buttons="modal_buttons"/>
     </div>
   </section>
 </template>
@@ -37,9 +37,12 @@ import Hero from "@/components/partials/Hero";
 import Editor from "@tinymce/tinymce-vue";
 import PostService from "@/services/PostService";
 import {api} from '@/main';
+import Modal from "@/components/Modal";
+import $ from 'jquery'
 export default {
 name: "Post_create",
   components: {
+    Modal,
     Hero,
     "editor": Editor
 },
@@ -49,6 +52,16 @@ name: "Post_create",
     title:"",
     error_msg: "",
     api: api,
+
+    modal_buttons:[
+      {
+        title: "Close",
+        styles: "btn-danger",
+        action: function (){
+          location.reload();
+        }
+      }
+    ],
   };
 },
 
@@ -66,6 +79,7 @@ name: "Post_create",
           break;
 
       }
+      $('#postinfo').modal();
 
     }
   }

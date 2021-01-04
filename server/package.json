@@ -1,6 +1,6 @@
 {
-  "name": "markupcms",
-  "version": "0.0.1+a1",
+  "name": "mcms-server",
+  "version": "0.5.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"

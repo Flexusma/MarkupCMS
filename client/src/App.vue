@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :key="$data.auth">
+  <div :key="$data.auth">
     <Nav />
     <router-view/>
   </div>
@@ -10,7 +10,7 @@ export default {
   name: 'app',
   components: {
     Nav
-  }  
+  },
 }
 </script>
 <style lang="scss">

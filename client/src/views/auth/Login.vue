@@ -19,7 +19,7 @@
     </transition>
     <div class="wallpaper-loggedin"></div>
 
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
           <div v-if="!$auth.isAuthenticated()" class="card login" v-bind:class="{ error: emptyFields }">

@@ -40,6 +40,9 @@ export let api={
   api_session_check_path: "/session/check",
   api_post_path: "/post",
   api_image_path: "/image",
+  api_author_path: "/authors",
+  author_id_path: "/id/",
+  author_user_path: "/user/",
 
 }
 export let constant={
@@ -82,16 +85,17 @@ export const vue = new Vue({
 
 
 export const vue = createApp(App,{
-  data:function() {
+  data() {
     return {
-        isAuth:undefined,
-      };
-    }
-    });
+      isAuth:undefined,
+    };
+  }
+});
     vue.use(VueAxios,axios)
     vue.use(router)
+
     vue.mount('#app');
-console.log(vue.config)
+console.log(vue.$data)
 initAuthService(vue);
 
 

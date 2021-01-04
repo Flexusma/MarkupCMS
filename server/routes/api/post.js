@@ -38,7 +38,6 @@ router.post('/', APIsessionChecker, [body('title').not().isEmpty(),body('content
     }else return res.json(Responses.respError(RespCode.USER_NO_AUTHOR,author+""));
 
     if(!(post instanceof Error)){
-      post.content = null;
       return res.json(Responses.respOK(RespCode.OK, post));
     }else return res.json(Responses.respError(RespCode.POST_CREATION_FAILED,post));
   }else res.json(Responses.respError(RespCode.NO_PERMISSION));

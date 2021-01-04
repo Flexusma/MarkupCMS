@@ -41,6 +41,13 @@ export default createRouter({
       component: () => import('../views/create/Post_create'),
       beforeEnter: authGuard
     },
+    {
+      path: '/create/author',
+      name: 'author_create',
+      meta:addMeta(Permission.CREATE_POST,Permission.CREATE_AUTHOR),
+      component: () => import('../views/create/Author_create'),
+      beforeEnter: authGuard
+    },
 
   ]
 })

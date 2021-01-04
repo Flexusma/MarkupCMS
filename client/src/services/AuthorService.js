@@ -3,20 +3,23 @@ import {api} from "@/main";
 import AuthServiceInstance from "@/auth/authService";
 
 export default {
-  async getPosts() {
-    let res = await AuthServiceInstance.authAxiosNoRed(axios.get(api.api_base_url+api.api_post_path));
-    console.log(res);
-    return res.data.data;
+  async getAuthors() {
+    //Maybe TODO
   },
-  async getPostSingle(postId) {
-    let res = await axios.get("http://localhost:3000/events/" + postId);
+  async getAuthorByID(authorId) {
+    let res = await axios.get(api.api_base_url+api.api_author_path+api.author_id_path+authorId);
+    return res.data;
+  },
+  async getAuthorByUser(authorId) {
+    let res = await axios.get(api.api_base_url+api.api_author_path+api.author_user_path+authorId);
     return res.data;
   },
 
-  async createPost(title,content){
+  async createAuthor(name,description,id){
       let res = await AuthServiceInstance.authAxiosNoRed(axios.post(api.api_base_url+api.api_post_path,{
-        title: title,
-        content: content
+        name: name,
+        description: description,
+        create_user_id: id
       }));
       return res;
   }

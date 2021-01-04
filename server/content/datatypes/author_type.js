@@ -14,11 +14,13 @@ exports.Author = class Author {
 
 //static functions
 
-    static getByID(id){
-        
+    static async getByID(id){
+        let res = await DB.getFromTable("authors","id",id);
+        return res;
     }
-    static getByUserID(id){
-
+    static async getByUserID(id){
+        let res = await DB.getFromTable("authors","user_id",id);
+        return res;
     }
 
     static async createTable() {
@@ -44,7 +46,6 @@ exports.Author = class Author {
             else
                 return new Author(response.insertId,name,desc,user_id);
         else return undefined;
-       // return new Post(response.id,title,content,response.creation_date,author_id);
     }
 
 }
