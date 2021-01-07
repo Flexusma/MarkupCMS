@@ -40,9 +40,11 @@ export let api={
   api_session_check_path: "/session/check",
   api_post_path: "/post",
   api_image_path: "/image",
-  api_author_path: "/authors",
+  api_author_path: "/author",
   author_id_path: "/id/",
   author_user_path: "/user/",
+  api_user_path:"/user",
+  user_list_path: "/list"
 
 }
 export let constant={
@@ -53,7 +55,7 @@ export let constant={
 
 export let lang={
   err_could_not_verify_login:"Entschuldige, etwas ist bei der Überprüfung deines Login-Status schiefgelaufen... Vieleicht hilft es, die Seite neu zu Laden, oder dich neu einzuloggen.",
-
+  err_author_create:"Es ist ein Fehler bei der Erstellung deines Autors aufgerteten. Bitte überprüfe deine Eingaben. Mehr Informationen: \n",
 }
 
 export let error_msg={
@@ -84,19 +86,13 @@ export const vue = new Vue({
  */
 
 
-export const vue = createApp(App,{
-  data() {
-    return {
-      isAuth:undefined,
-    };
-  }
-});
-    vue.use(VueAxios,axios)
-    vue.use(router)
-
-    vue.mount('#app');
-console.log(vue.$data)
+export const vue = createApp(App)
+    .use(VueAxios,axios)
+    .use(router)
 initAuthService(vue);
+export const app = vue.mount('#app');
+
+console.log("Application init complete:\n\n ",vue, app)
 
 
 

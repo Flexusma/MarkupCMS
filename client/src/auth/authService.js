@@ -1,4 +1,4 @@
-import {api, constant, error_msg, vue} from "@/main";
+import {api, constant, error_msg, vue, app} from "@/main";
 import {NextErrorRedir} from "@/router/router_utils";
 import axios from 'axios';
 
@@ -15,7 +15,6 @@ class AuthService{
 
     loginRedirect(){
         this.checkAuthReq();
-        console.log(vue);
         this.push("login");
     }
 
@@ -34,11 +33,11 @@ class AuthService{
                     //if (obj.returnTo !== undefined) {
                     //    vue.$router.push(obj.returnTo);
                     //} else {
-                    vue.$nextTick(()=>{
+                    app.$nextTick(()=>{
                         AuthServiceInstance.setAuth(false);
                         AuthServiceInstance.push(constant.home_page_name);
-                        vue.$root.$router.go(0);
-                        vue.$root.$router.go(0);
+                        app.$root.$router.go(0);
+                        app.$root.$router.go(0);
                     });
 
                    // }
@@ -105,28 +104,13 @@ class AuthService{
 
     checkAuthReq(){
         axios.get(api.api_base_url+api.api_session_check_path).then((res) => {
-            console.log(res.data);
-            if(res.data.info.code===200) {
-                this.setAuth(true)
-                this.user=res.data.data;
-            }
-            else{
-                this.setAuth(false)
-            }
+            this.checkAuth(res);
         })
     }
 
     async checkAuthReqAsync(){
         const res = await axios.get(api.api_base_url+api.api_session_check_path);
-
-            console.log(res.data);
-            if(res.data.info.code===200) {
-                this.setAuth(true)
-                this.user=res.data.data;
-            }
-            else{
-                this.setAuth(false)
-            }
+        this.checkAuth(res);
     }
 
     async isAuthUser(){
@@ -138,18 +122,32 @@ class AuthService{
 
     }
 
+    checkAuth(res){
+        console.log("Checking user auth. Got response: ",res.data);
+        if(res.data.info.code===200) {
+            console.log("Auth: true")
+            this.setAuth(true)
+            this.user=res.data.data;
+        }
+        else{
+            console.log("Auth: false")
+            this.setAuth(false)
+        }
+    }
+
+
     push(to){
-        console.log(vue)
-        if(vue.config.globalProperties.$route.name!==to){
-            vue.config.globalProperties.$router.push({name: to});
+        console.log(app)
+        if(app.$route.name!==to){
+            app.$router.push({name: to});
         }
     }
     setAuth(t){
-      vue.isAuth = t;
+      app.isAuth = t;
     }
     getAuth(){
-        if(vue!==undefined)
-            return vue.isAuth;
+        if(app!==undefined)
+            return app.isAuth;
         else return undefined;
     }
 
@@ -164,7 +162,6 @@ export default AuthServiceInstance;
 export function initAuthService(vue){
 
     AuthServiceInstance.checkAuthReq();
-    console.log(vue)
     vue.config.globalProperties.$auth=AuthServiceInstance;
 
 }

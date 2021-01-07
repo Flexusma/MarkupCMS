@@ -28,7 +28,7 @@
             <form v-on:submit.prevent="doLogin" class="form-group">
               <input v-model="emailLogin" type="text" class="form-control" placeholder="Username" required>
               <input v-model="passwordLogin" type="password" class="form-control" placeholder="Password" required>
-              <input type="submit" class="btn btn-primary" value="Absenden" @click="doLogin">
+              <input type="submit" class="btn btn-primary" value="Absenden">
               <p><a href="#">Forgot your password?</a></p>
             </form>
           </div>

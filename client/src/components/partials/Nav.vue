@@ -3,12 +3,12 @@
     <div class="container">
       <button class="navbar-right navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span>☰</button>
 
-      <div class="navbar-collapse collapse mt-3" :key="$root.$data.isAuth">
+      <div class="navbar-collapse collapse mt-3">
         <form class="d-flex mb-3">
           <input class="form-control me-2 mr-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-primary" type="submit">Search</button>
         </form>
-        <ul class="nav navbar-nav ml-auto">
+        <ul class="nav navbar-nav ml-auto" :key="$root.$data.isAuth">
           <li class="active nav-item text-hover-fill-goes-down"><a @click="$auth.push('home')" class="nav-link">Home</a></li>
           <li class="nav-item text-hover-fill-goes-down"><a  class="nav-link" href="">Link</a></li>
           <li class="nav-item text-hover-fill-goes-down"><a  class="nav-link" href="">Link</a></li>
@@ -65,7 +65,7 @@ export default {
 }
 
 .dropdown-menu{
-  background: transparent;
+  background: #007bff;
 }
 
 

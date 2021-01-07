@@ -54,10 +54,9 @@ export default createRouter({
 
 function addMeta(...perms) {
   let perm =0;
-  console.log(perms)
+  console.log("Adding meta to route: perms: "+perms)
   for(const per of perms){
     perm=perm||per;
-    console.log(perm)
   }
   return{
     permission: perm,

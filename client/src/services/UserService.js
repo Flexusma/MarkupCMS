@@ -19,5 +19,16 @@ export default {
         content: content
       }));
       return res;
+  },
+
+  async getUsersListSelector(query){
+    let res = await AuthServiceInstance.authAxiosNoRed(axios.get(api.api_base_url+api.api_user_path+api.user_list_path,{
+      params:{
+        q: query
+      }
+    }));
+    console.log(res);
+
+    return res;
   }
 }

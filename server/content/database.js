@@ -65,6 +65,37 @@ exports.Database = class Database{
         
     }
 
+    async update(table_name, values, fields,condition){
+        if(this.conn===undefined)
+            this.conn = await setupConn();
+
+        let prepstate = "UPDATE "+table_name+" SET ";
+        if(values.length===0) throw new Error("Amount of values can't be zero!");
+        let count = 0;
+        for(let value in values){
+            if(count===0)prepstate+=fields[count]+" = ? ";
+            else prepstate+=", " +fields[count]+" = ?";
+            count++;
+        }
+        prepstate+=" WHERE "+condition+";";
+
+        console.log("Updating data in "+table_name+" with Statement: \n\t"+prepstate);
+        console.log(values);
+        let err;
+        let rows, fieldsresp;
+        try{
+            [rows, fieldsresp] = await this.conn.query(prepstate, values);
+            console.log(rows,fieldsresp)
+        }catch(e){
+            err =e;
+            //console.log(e);
+        }
+
+        if(err!==undefined)
+            return err;
+        return rows;
+    }
+
     async createTable(table_name,fields,extras){
         if(this.conn===undefined)  this.conn = await setupConn();
 
@@ -79,14 +110,18 @@ exports.Database = class Database{
             return rows;
     }
 
-    async getFromTable(table_name,field,value) {
+    async getFromTable(table_name,field,value,isLike) {
         if(this.conn===undefined)
              this.conn = await setupConn();
+        let prepstate = "SELECT * FROM "+table_name+" WHERE "+field+" = ?;";
+        if(isLike)
+            prepstate = "SELECT * FROM "+table_name+" WHERE "+field+" LIKE ?;";
+        if(value==="")
+            prepstate = "SELECT * FROM "+table_name+";";
 
-        let prepstate = "SELECT * FROM "+table_name+" WHERE "+field+"= ?;";
-         if(value===undefined) throw new Error("Value to compare can't be undefined!");
+        if(value===undefined) throw new Error("Value to compare can't be undefined!");
 
-
+        console.log(prepstate)
         console.log("Getting data from "+table_name+" where "+field+" = "+value);
         let err;
         let rows,fieldsresp;
@@ -103,6 +138,8 @@ exports.Database = class Database{
         console.info("Data was pulled succesfully");
         return rows;
     }
+
+
     async getPagewise(table_name, pagenum, pagecount, condition){
         if(this.conn===undefined)
             this.conn = await setupConn();

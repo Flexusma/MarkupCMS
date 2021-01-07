@@ -11,24 +11,30 @@ var router = express.Router();
 
 
 /* GET users listing. */
-router.get('/id/:id(\\d)', function(req, res, next) {
+router.get('/id/:id(\\d)', async function(req, res, next) {
 
     if(req.params.id!==undefined)
 
     res.send('respond with a resource');
 });
-router.get('/user/:id(\\d)', function(req, res, next) {
+router.get('/user/:id(\\d)', async function(req, res, next) {
 
-    if(req.params.id!==undefined)
+    if(req.params.id!==undefined) {
 
-        res.send('respond with a resource');
+        let resp = await Author.getByUserID(req.params.id);
+        console.log(resp)
+        if(resp!==undefined&&!(resp instanceof Error))
+            res.json(Responses.respOK(RespCode.OK,resp))
+        else res.json(Responses.respError(RespCode.DOESNT_EXIST_REFERENCE))
+    }else
+        res.json(Responses.respError(RespCode.MISSING_FIELD))
 });
 
-router.post('/', APIsessionChecker, [body('username').isAscii(),body('description').not().isEmpty()],async function(req, res, next) {
+router.post('/', APIsessionChecker, [body('name').not().isEmpty(),body('description').not().isEmpty(), body('create_user_id').not().isEmpty()],async function(req, res, next) {
 
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.json(Responses.respError(RespCode.POST_CREATION_FAILED,errors.array()));
+        return res.json(Responses.respError(RespCode.AUTHOR_CREATION_FAILED,errors.array()));
     }
     console.log(req.session.user);
     console.log("Create author permission?"+req.session.user.permission+" "+Permission.CREATE_AUTHOR+" : "+Permission.hasPermission(req.session.user.permission, Permission.CREATE_AUTHOR));
@@ -49,6 +55,7 @@ router.post('/', APIsessionChecker, [body('username').isAscii(),body('descriptio
                 let other_user = await User.getByID(createUserID);
                 if (other_user !== undefined && !(other_user instanceof Error)) {
                     //safety check
+                    console.log(other_user,createUserID)
                     if (other_user.id === createUserID)
                         author = await Author.new(name, desc, createUserID);
                 }else

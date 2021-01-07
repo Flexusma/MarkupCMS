@@ -25,7 +25,7 @@ router.post('/', APIsessionChecker , async function(req, res, next) {
 
     console.log(app.fileSaveDir);
 
-    let DBimg = await Image.new(uploadedFile.name,ending);
+    let DBimg = await Image.new(uploadedFile.name,ending, req.session.user.id);
 
     console.log(DBimg);
 
@@ -51,7 +51,17 @@ router.post('/', APIsessionChecker , async function(req, res, next) {
 
 });
 
+router.get('/user/:id', APIsessionChecker , async function(req, res, next) {
+    if(req.params.id !==undefined){
+        let imgs = await Image.getListByUserID(req.params.id);
+        res.json(Responses.respOK(RespCode.OK,imgs));
+    }else
+        res.json(Responses.respError(RespCode.MISSING_FIELD,"user id missing or empty"));
+});
+
 router.get('/:id', APIsessionChecker ,function(req, res, next) {
+
+
     res.json(Responses.respOK(RespCode.OK,req.session.user));
 });
 

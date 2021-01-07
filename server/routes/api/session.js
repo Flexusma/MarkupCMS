@@ -1,4 +1,5 @@
 var express = require('express');
+const {Timestamp} = require("../../content/encrypt/Timestamp");
 const { APIsessionChecker, APINOTsessionChecker } = require('../../content/authentication/middleware');
 const { User } = require('../../content/datatypes/user_type');
 const { Hash } = require('../../content/encrypt/hash');
@@ -20,11 +21,15 @@ router.post('/', APINOTsessionChecker ,async function(req, res, next) {
     let pass_hash = Hash.hash512Salt(pass);
     let user = await User.getByUsername(username);
 
-    if(user!=undefined && !(user instanceof Error)){
+    if(user!==undefined && !(user instanceof Error)){
         if(user.pass===pass_hash){
             user.pass = null;
             req.session.user = user;
             req.session.permission = user.permission;
+
+            console.log("Login successful, updating user["+user.username+"] login_time.");
+            await user.updateLoginTime();
+
             return res.json(Responses.respOK(RespCode.OK,[req.session.user, req.session.permission, req.session.id]));
         }else return res.json(Responses.respError(RespCode.UNAME_OR_PASS_WRONG));
     }else return res.json(Responses.respError(RespCode.UNAME_OR_PASS_WRONG));

@@ -1,13 +1,20 @@
 <template>
-  <div :key="$data.auth">
+  <div >
     <Nav />
     <router-view/>
   </div>
 </template>
 <script>
 import Nav from './components/partials/Nav.vue';
+import {ref} from "@vue/reactivity";
 export default {
   name: 'app',
+  data () {
+    let isAuth = ref(false);
+    return{
+      isAuth,
+    }
+  },
   components: {
     Nav
   },

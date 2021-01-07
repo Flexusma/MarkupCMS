@@ -12,6 +12,19 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get("/list", APIsessionChecker, async function(req,res,next){
+ // if(Permission.hasPermission(req.session.permission, Permission.)) {
+  let list
+    if (req.query.q !== undefined) {
+      list = await User.getListByUsername(req.query.q);
+    }else{
+      list = await User.getListByUsername("");
+    }
+    console.log(list);
+    res.json(Responses.respOK(RespCode.OK,list));
+    //}
+});
+
 router.post('/', APIsessionChecker ,async function(req, res, next) {
   let username = req.headers.x_user;
   let email = req.headers.x_email;
