@@ -15,6 +15,7 @@ var router = express.Router();
 
 
 router.post('/', APIsessionChecker , async function(req, res, next) {
+    console.log(req.files)
     if (!req.files || Object.keys(req.files).length === 0) {
         return res.json(Responses.respError(RespCode.NO_POST_DATA,"File length was zero"));
     }
@@ -42,7 +43,7 @@ router.post('/', APIsessionChecker , async function(req, res, next) {
     arr.shift();
 
 
-    const host = req.protocol+"://"+req.hostname+"/"+arr.join("/");
+    const host = req.protocol+"://"+req.hostname+":3000/"+arr.join("/");
     return res.json({
         location: host+"/" + DBimg.name,
         image: DBimg,
@@ -54,12 +55,40 @@ router.post('/', APIsessionChecker , async function(req, res, next) {
 router.get('/user/:id', APIsessionChecker , async function(req, res, next) {
     if(req.params.id !==undefined){
         let imgs = await Image.getListByUserID(req.params.id);
-        res.json(Responses.respOK(RespCode.OK,imgs));
+        let newImgs= [];
+        //REMOVE PORT BEFORE PRODUCTION!!!!!!!!!!!!!!!
+        let arr = app.fileSaveDir.split("/");
+        arr.shift();
+        arr.shift();
+        const host = req.protocol+"://"+req.hostname+":3000/"+arr.join("/");
+        for(let image in imgs){
+
+            image.url = host+image.name;
+            newImgs.push(image);
+        }
+        res.json(Responses.respOK(RespCode.OK,newImgs));
     }else
         res.json(Responses.respError(RespCode.MISSING_FIELD,"user id missing or empty"));
 });
 
-router.get('/:id', APIsessionChecker ,function(req, res, next) {
+router.get('/user/', APIsessionChecker , async function(req, res, next) {
+        let imgs = await Image.getListByUserID(req.session.user.id);
+        let newImgs= [];
+        //REMOVE PORT BEFORE PRODUCTION!!!!!!!!!!!!!!!
+        let arr = app.fileSaveDir.split("/");
+        arr.shift();
+        arr.shift();
+        const host = req.protocol+"://"+req.hostname+":3000/"+arr.join("/")+"/";
+        console.log(imgs)
+        imgs.forEach((image) => {
+            image.url=host+image.name;
+            console.log(image)
+            newImgs.push(image);
+        });
+        res.json(Responses.respOK(RespCode.OK,newImgs));
+});
+
+router.get('/id/:id', APIsessionChecker ,function(req, res, next) {
 
 
     res.json(Responses.respOK(RespCode.OK,req.session.user));

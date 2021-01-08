@@ -18,7 +18,9 @@ import 'tinymce/icons/default';
 // A theme is also required
 import 'tinymce/themes/silver';
 
-
+import VueSelectImage from 'vue-select-image'
+// add stylesheet
+import('vue-select-image/dist/vue-select-image.css');
 
 
 axios.defaults.withCredentials = true;
@@ -44,7 +46,8 @@ export let api={
   author_id_path: "/id/",
   author_user_path: "/user/",
   api_user_path:"/user",
-  user_list_path: "/list"
+  user_list_path: "/list",
+  image_user_path: "/user/",
 
 }
 export let constant={
@@ -89,6 +92,7 @@ export const vue = new Vue({
 export const vue = createApp(App)
     .use(VueAxios,axios)
     .use(router)
+    .use(VueSelectImage)
 initAuthService(vue);
 export const app = vue.mount('#app');
 

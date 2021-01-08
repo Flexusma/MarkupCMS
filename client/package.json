@@ -19,7 +19,9 @@
     "tinymce": "^5.6.2",
     "vue": "^3.0.5",
     "vue-axios": "^3.2.0",
-    "vue-router": "^4.0.1"
+    "vue-router": "^4.0.1",
+    "vue-select-image": "^1.9.0",
+    "vue-smooth-reflow": "^0.1.12"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.5.9",
