@@ -1,7 +1,7 @@
 <template>
   <Multiselect
       v-model="value"
-      placeholder="Choose a user"
+      placeholder="Search for a user"
       :filterResults="true"
       :minChars="1"
       :resolveOnLoad="false"

@@ -1,48 +1,34 @@
 <template>
-  <div class="event-single">
-    <section class="hero is-primary">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">{{ event.name }}</h1>
-          <h2 class="subtitle">
-            <strong>Date:</strong>
-            {{ event.date }}
-            <br />
-            <strong>Time:</strong>
-            {{ event.time }}
-          </h2>
-        </div>
-      </div>
-    </section>
+  <div class="event-single" v-if="loaded">
+    <Hero :title="post.title" :desc="getDate(post.creation_date)"/>
     <section class="event-content">
-      <div class="container">
-        <p class="is-size-4 description">{{ event.description }}</p>
-        <p class="is-size-5">
-          <strong>Location:</strong>
-          {{ event.location }}
-        </p>
-        <p class="is-size-5">
-          <strong>Category:</strong>
-          {{ event.category }}
-        </p>
-        <div class="event-images columns is-multiline has-text-centered">
-          <div v-for="image in event.images" :key="image.id" class="column is-one-third">
-            <img :src="`${image}`" :alt="`${event.name}`" />
-          </div>
+      <div class="container-fluid">
+        <h1 class="">{{post.title}}</h1>
+        <div class="post-content" v-html="post.content">
+
         </div>
       </div>
     </section>
   </div>
+  <div v-else class="text-center">
+    <Spinner/>
+    <h1>Loading...</h1>
+  </div>
 </template>
 <script>
 // import EventService
-import EventService from '@/services/PostService.js';
+import PostService from '@/services/PostService.js';
+import Hero from "@/components/partials/Hero";
+import Spinner from "@/components/partials/Spinner";
+var dateFormat = require('dateformat');
 export default {
   name: 'EventSingle',
+  components: {Spinner, Hero},
   data() {
     // initialize the event object
     return {
-      event: {}
+      loaded: false,
+      post: undefined,
     }
   },
   created() {
@@ -50,17 +36,17 @@ export default {
   },
   methods: {
     async getEventData() {
-      // Get the access token from the auth wrapper
-      const accessToken = await this.$auth.getTokenSilently()
-
-      // Use the eventService to call the getEventSingle method
-      EventService.getEventSingle(this.$route.params.id, accessToken)
-      .then(
-        (event => {
-          this.$set(this, "event", event);
-        }).bind(this)
-      );
-    }
+      PostService.getPostSingle(this.$route.params.id).then((res) => {
+          this.post=res;
+          this.loaded=true;
+        });
+    },
+    getDate(data){
+      console.log(data)
+      let date = new Date(Date.parse(data));
+      let fdate = dateFormat(date,"d.mm.yyyy");
+      return fdate;
+    },
   }
 }
 </script>

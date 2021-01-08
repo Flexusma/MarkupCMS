@@ -21,6 +21,12 @@ export default createRouter({
       component: () => import('../views/About.vue')
     },
     {
+      path: '/post/review',
+      name: 'postReview',
+      component: () => import('../views/PostReview.vue'),
+      beforeEnter: authGuard
+    },
+    {
       path: '/post/:id',
       name: 'postSingle',
       component: () => import('../views/PostSingle.vue'),

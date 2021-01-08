@@ -2,7 +2,7 @@
 <div class="home">
   <section class="hero is-dark">
     <div class="hero-body">
-      <Hero title="Welcome to MCMS" desc="This is a random description text"/>
+      <Hero title="WSZ" desc="Willkommen auf der Homepage der Schülerzeitung am Willigis"/>
       <div class="button-block">
         <button v-if="!$root.$data.isAuth" @click="login" class="button is-xl is-dark">Sign Up to Browse Events</button>
         <h3 v-else class="is-size-3 has-background-dark welcome">Welcome, {{ $auth.user.username }}!</h3>

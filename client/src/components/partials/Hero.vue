@@ -1,4 +1,5 @@
 <template>
+  <div class="hero-bg-img">
     <div class="container-fluid big-logo-row">
       <div class="container">
         <div class="row">
@@ -17,6 +18,7 @@
         <button v-else-if="button2!==undefined" class="hero-button">{{button2}}</button>
       </div>
       </div>
+  </div>
 </template>
 
 <script>
@@ -30,7 +32,9 @@ name: "Hero",
 $navbar-height: 50px;
 $big-logo-padding: 15px; // adjust these 2 values
 $small-logo-padding: 2px; // of bottom padding to look nice
-$main-color: #FFD700;
+//$main-color: #ffd700;
+
+$main-color: rgba(169, 142, 0, 0.6);
 
 .hero {
   display: flex;
@@ -131,6 +135,7 @@ h2{
 
   .big-logo-container {
     padding-top: $navbar-height;
+    color: white;
   }
 
   h1 {
@@ -163,6 +168,10 @@ h2{
 }
 .container-fluid{
   padding-bottom: 3em;
+}
+.hero-bg-img{
+  background-image: url("~@/styles/imgs/hero-image.png");
+  background-size: cover;
 }
 
 </style>

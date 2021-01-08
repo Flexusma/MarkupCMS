@@ -16,9 +16,10 @@ exports.Author = class Author {
 //static functions
 
     static async getByID(id){
+        console.log(id)
         let res = await DB.getFromTable("authors","id",id);
         if(!(res instanceof Error)){
-
+            console.log(res);
             let ares = res[0];
 
             let author = new Author(ares.id, ares.name, ares.desc, ares.user_id,ares.pp_id);

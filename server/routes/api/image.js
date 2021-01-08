@@ -29,14 +29,18 @@ router.post('/', APIsessionChecker , async function(req, res, next) {
     let DBimg = await Image.new(uploadedFile.name,ending, req.session.user.id);
 
     console.log(DBimg);
+    try {
 
-    if (!fs.existsSync(app.fileSaveDir)){
-        fs.mkdirSync(app.fileSaveDir, {recursive: true});
-    }
+        if (!fs.existsSync(app.fileSaveDir)) {
+            fs.mkdirSync(app.fileSaveDir, {recursive: true});
+        }
 
-    let err =await uploadedFile.mv(app.fileSaveDir+"/" + DBimg.name);
-    if (err)
+        let err = await uploadedFile.mv(app.fileSaveDir + "/" + DBimg.name);
+        if (err)
+            return res.json(Responses.respError(RespCode.IMAGE_SAVE_ERROR, err));
+    }catch (err){
         return res.json(Responses.respError(RespCode.IMAGE_SAVE_ERROR, err));
+    }
 
     let arr = app.fileSaveDir.split("/");
     arr.shift();
@@ -60,12 +64,13 @@ router.get('/user/:id', APIsessionChecker , async function(req, res, next) {
         let arr = app.fileSaveDir.split("/");
         arr.shift();
         arr.shift();
-        const host = req.protocol+"://"+req.hostname+":3000/"+arr.join("/");
-        for(let image in imgs){
-
-            image.url = host+image.name;
+        const host = req.protocol+"://"+req.hostname+":3000/"+arr.join("/")+"/";
+        console.log(imgs)
+        imgs.forEach((image) => {
+            image.url=host+image.name;
+            console.log(image)
             newImgs.push(image);
-        }
+        });
         res.json(Responses.respOK(RespCode.OK,newImgs));
     }else
         res.json(Responses.respError(RespCode.MISSING_FIELD,"user id missing or empty"));

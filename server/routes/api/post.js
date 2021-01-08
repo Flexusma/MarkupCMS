@@ -13,7 +13,10 @@ var router = express.Router();
 
 /* GET posts. */
 router.get('/:id(\\d)', function(req, res, next) {
-  res.send('respond with a resource');
+  let post = Post.getPost(req.params.id)
+  if(!(post instanceof Error)){
+      return res.json(Responses.respOK(RespCode.OK,post));
+  }else return res.json(Responses.respError(RespCode.DOESNT_EXIST_REFERENCE,post));
 });
 router.post('/', APIsessionChecker, [body('title').not().isEmpty(),body('content').not().isEmpty()],async function(req, res, next) {
 
@@ -31,8 +34,9 @@ router.post('/', APIsessionChecker, [body('title').not().isEmpty(),body('content
     console.log(title,content,crt_user);
 
     let post;
-    console.log(title+ " - "+crt_user);
-    let author = Author.getByID(crt_user.id);
+    console.log(title+ " - "+crt_user.id);
+    let author = await Author.getByUserID(crt_user.id);
+    console.log(author)
     if(!(author instanceof Error)&&(author!==undefined)) {
        post = await Post.new(title, content, author.id);
     }else return res.json(Responses.respError(RespCode.USER_NO_AUTHOR,author+""));

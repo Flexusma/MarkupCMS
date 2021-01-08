@@ -21,6 +21,15 @@ exports.Post = class Post {
         let resp = await DB.getPagewise("posts",pagenum,pagecount);
         return resp;
     }
+    static async getPost(id){
+        let resp = await DB.getFromTable("posts","id",id);
+        if(!(resp instanceof Error)){
+            let postres = resp[0];
+            let post = new Post(postres.id,postres.title,postres.public,postres.content,postres.creation_date,postres.author_id)
+            return post;
+        }
+        return resp;
+    }
     static async search(query){
         let resp = await DB.getFromTable("posts","title","%"+query+"%",true);
         if(!(resp instanceof Error)){
@@ -50,8 +59,8 @@ exports.Post = class Post {
         );
     }
     static async new(title, content, author_id) {
-        let creation_date = Timestamp().getCurrentTimestamp();
-        let response = await DB.insertInto("posts",[title,content, false, creation_date,author_id],["id","title","content","public","creation_date","author_id"]);
+        let creation_date = Timestamp.getCurrentTimestamp();
+        let response = await DB.insertInto("posts",[title,content, false, creation_date,author_id],["title","content","public","creation_date","author_id"]);
         console.log(response);
         if(response!==undefined)
             if(response instanceof Error)

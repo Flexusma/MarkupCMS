@@ -1,9 +1,9 @@
 <template>
-  <div class="events">
-    <h2 class="subtitle is-3">Check out our upcoming events</h2>
-    <div class="columns is-multiline">
-      <div v-for="post in posts" :event="post" :key="post.id" class="column is-one-quarter">
-        <router-link :to="`/post/${post.id}`">
+  <div class="posts">
+    <h2 class="text-center m-3">Neue Beiträge</h2>
+    <div class="container-fluid is-multiline">
+      <div v-for="post in posts" :event="post" :key="post.id" class=" is-one-quarter row">
+        <router-link :to="`/post/${post.id}`" class="col">
           <PostCard :post="post" />
         </router-link>
       </div>
@@ -23,7 +23,6 @@ export default {
   },
   data() {
     return {
-      post: {},
       posts: []
     };
   },

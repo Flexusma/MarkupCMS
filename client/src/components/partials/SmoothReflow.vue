@@ -14,7 +14,9 @@ export default {
       type: String,
       default: 'div'
     },
-    options: Object,
+    options: {
+      property: ['box-shadow']
+    },
   },
   mounted () {
     this.$smoothReflow(this.options)

@@ -24,6 +24,10 @@ export default {
 
 html{
   min-width: 300px;
+  background:#f7f7f7;
+}
+body{
+  background:#f7f7f7;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

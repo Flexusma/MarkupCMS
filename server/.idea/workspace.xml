@@ -3,16 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="66a1b3a5-fb5b-4e2a-af53-59bd855efa2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/services/ImageService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/services/ImageService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/views/About.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/About.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/PostCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/PostCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/PostList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/PostList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/partials/AdaptiveUserSelect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/partials/AdaptiveUserSelect.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/partials/Hero.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/partials/Hero.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/partials/Nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/partials/Nav.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/partials/SmoothReflow.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/partials/SmoothReflow.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/services/PostService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/services/PostService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/views/PostSingle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/PostSingle.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/views/create/Author_create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/create/Author_create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/views/create/Post_create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/views/create/Post_create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/images/e0fcda7418aded6019ab884331eaa36djpg1610019593393.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/datatypes/author_type.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/datatypes/author_type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/content/datatypes/post_type.js" beforeDir="false" afterPath="$PROJECT_DIR$/content/datatypes/post_type.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api/image.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/post.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +96,8 @@
       <workItem from="1609760166351" duration="870000" />
       <workItem from="1609834712040" duration="15005000" />
       <workItem from="1610018005585" duration="2103000" />
-      <workItem from="1610042341040" duration="8133000" />
+      <workItem from="1610042341040" duration="8135000" />
+      <workItem from="1610094304514" duration="5460000" />
     </task>
     <servers />
   </component>

@@ -14,14 +14,15 @@
               <AdaptiveInput class="mt-3" type="text" placeholder="Name" @value-change="inp_name=$event"/>
               <AdaptiveInput class="mt-3" type="text" placeholder="Short description" @value-change="inp_desc=$event"/>
               <ImageGalleryPicker class="mt-3" title="Profilbild wählen (optional)" @value-change="picture_id=$event"/>
-              <AdaptiveUserSelect class="mt-3" @value-change="inp_usr_id=$event"/>
+              <AdaptiveUserSelect v-if="hasAuthorOtherPerm" class="mt-3" @value-change="inp_usr_id=$event"/>
               <p>Selected user ID: {{inp_usr_id}}</p>
-              <input type="submit" value="Speichern">
+              <input class="m-0" type="submit" value="Speichern">
             </form>
           </div>
         </div>
     </div>
-    <div v-else class="align-items-center p-3">
+    <div v-else class="align-items-center p-3 text-center">
+      <Spinner/>
       <h1>Loading...</h1>
     </div>
   </section>
@@ -38,12 +39,12 @@ import $ from 'jquery';
 import {lang} from "@/main";
 import AuthServiceInstance from "@/auth/authService";
 import ImageGalleryPicker from "@/components/partials/ImageGalleryPicker";
-
-
+import Permission from "@/auth/permission";
+import Spinner from "@/components/partials/Spinner";
 
 export default {
 name: "Author_create",
-  components: {ImageGalleryPicker, Modal, AdaptiveUserSelect, AdaptiveInput, AuthorDisplay, Hero},
+  components: {Spinner, ImageGalleryPicker, Modal, AdaptiveUserSelect, AdaptiveInput, AuthorDisplay, Hero},
   methods:{
       async submitAuthor() {
         let res = await AuthorService.createAuthor(this.inp_name,this.inp_desc,this.inp_usr_id);
@@ -53,10 +54,12 @@ name: "Author_create",
         }else{
           this.error_msg=lang.err_author_create+JSON.stringify(res.data.error);
         }
-      }
+      },
+    hasAuthorOtherPerm(){
+        return Permission.hasPermission(AuthServiceInstance.user.permission,Permission.CREATE_AUTHOR_OTHER);
+    }
   },
   data(){
-
     AuthorService.getAuthorByUser(AuthServiceInstance.user.id).then((res) => {
       console.log(res);
       if(res.info.code===200){
@@ -69,7 +72,7 @@ name: "Author_create",
     return{
       inp_name: "",
       inp_desc: "",
-      inp_usr_id: 0,
+      inp_usr_id: AuthServiceInstance.user.id,
       picture_id: undefined,
       error_msg: "",
       hero_msg:"Go ahead...",

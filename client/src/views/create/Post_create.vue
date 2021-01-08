@@ -28,6 +28,8 @@
       <input type="button" class="mt-3" value="Absenden" @click="submit()">
       <p>{{title +" "+content}}</p>
       <Modal mid="postinfo" title="An error occured" :body="error_msg + '\nPost was saved as a draft locally in your browser, you can load it with the restore button on the right side of the toolbar, after reloading the page.'" :buttons="modal_buttons"/>
+      <Modal mid="postsuccess" title="Post created" :body="error_msg + '\nPost ['+ title+'] was successfully created!'" :buttons="modal_buttons"/>
+
     </div>
   </section>
 </template>
@@ -71,15 +73,17 @@ name: "Post_create",
       const res = await PostService.createPost(this.title, this.content);
       console.log(res)
       switch (res.data.info.code) {
-        case 200: this.error_msg="UWU";
-        break;
         case 612: this.error_msg=res.data.info.message;
         break;
         case 611: this.error_msg=res.data.info.message;
           break;
 
       }
-      $('#postinfo').modal();
+      if(res.data.info.code===200){
+        $('#postsuccess').modal();
+        return;
+      }else
+        $('#postinfo').modal();
 
     }
   }
