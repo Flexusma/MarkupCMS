@@ -30,7 +30,6 @@ export default createRouter({
       path: '/post/:id',
       name: 'postSingle',
       component: () => import('../views/PostSingle.vue'),
-      beforeEnter: authGuard
     },
 
     //auth

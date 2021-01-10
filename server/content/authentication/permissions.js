@@ -22,6 +22,7 @@ exports.Permission = class Permission{
     static IMAGE_DELETE = 0x400;
 
     static CREATE_AUTHOR_OTHER = 0x800;
+    static RELEASE_POST = 0x1000;
 
 
     

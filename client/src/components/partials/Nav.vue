@@ -10,6 +10,7 @@
         </form>
         <ul class="nav navbar-nav ml-auto" :key="$root.$data.isAuth">
           <li class="active nav-item text-hover-fill-goes-down"><a @click="$auth.push('home')" class="nav-link">Home</a></li>
+          <li class="nav-item text-hover-fill-goes-down"><a href="" class="nav-link"><i class="lni lni-instagram"></i> Instagram</a></li>
           <li v-if="$root.$data.isAuth" class="nav-item text-hover-fill-goes-down"><a  class="nav-link" @click="$auth.push('postReview')">Review</a></li>
 
           <li v-if="$root.$data.isAuth" class="nav-item dropdown text-hover-fill-goes-down">
@@ -17,7 +18,7 @@
                 Create
               </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" @click="$auth.push('post_create')">Post</a>
+              <router-link class="dropdown-item" :to="{name:'post_create'}">Post</router-link>
               <a class="dropdown-item" @click="$auth.push('user_create')">User</a>
               <a class="dropdown-item" @click="$auth.push('author_create')">Author</a>
             </div>

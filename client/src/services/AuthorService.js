@@ -15,11 +15,12 @@ export default {
     return res.data;
   },
 
-  async createAuthor(name,description,id){
+  async createAuthor(name,description,id,pp_id){
       let res = await AuthServiceInstance.authAxiosNoRed(axios.post(api.api_base_url+api.api_author_path,{
         name: name,
         description: description,
-        create_user_id: id
+        create_user_id: id,
+        pp_id:pp_id
       }));
       return res;
   }

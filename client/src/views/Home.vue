@@ -3,21 +3,24 @@
   <section class="hero is-dark">
     <div class="hero-body">
       <Hero title="WSZ" desc="Willkommen auf der Homepage der Schülerzeitung am Willigis"/>
-      <div class="button-block">
+     <!-- <div class="button-block">
         <button v-if="!$root.$data.isAuth" @click="login" class="button is-xl is-dark">Sign Up to Browse Events</button>
         <h3 v-else class="is-size-3 has-background-dark welcome">Welcome, {{ $auth.user.username }}!</h3>
-      </div>
+      </div>-->
     </div>
   </section>
+  <Dash/>
   <PostList />
 </div>
 </template>
 <script>
 import PostList from '../components/PostList';
 import Hero from "@/components/partials/Hero";
+import Dash from "@/components/partials/Dash";
 export default {
   name: 'home',
   components: {
+    Dash,
     Hero,
     PostList
   },
@@ -47,7 +50,7 @@ export default {
     font-size: 1.7rem;
   }
   .hero-body{
-    padding-bottom: 3em;
+
   }
 
 </style>

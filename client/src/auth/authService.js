@@ -51,9 +51,8 @@ class AuthService{
 
     async routeAuthCheck(next){
         this.checkAuthReq();
-        let ax = axios.get(api.api_base_url+api.api_token_check_url);
         try {
-            if (await this.authAxios(ax, next)!==undefined) {
+            if(this.isAuthenticated()){
                 next();
             } else {
                 //just in case AuthAxios fails

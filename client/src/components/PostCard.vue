@@ -44,7 +44,7 @@ export default {
     strip(html){
       let doc = new DOMParser().parseFromString(html, 'text/html');
       let txt = doc.body.textContent || "";
-      return txt.substring(0,300);
+      return txt.substring(0,300)+" ...";
     },
     getFirstImage(content){
       var ele = document.createElement("div");
@@ -65,6 +65,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+
 *,
 *::after,
 *::before {
@@ -72,7 +73,7 @@ export default {
 }
 
 body {
-  font-family: 'Montserrat';
+  font-family: 'Roboto';
   font-size: 14px;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -90,14 +91,16 @@ body {
 }
 
 .post-card {
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.2);
   background: #FFD700;
   min-width: 100%;
+  transition: padding 50ms;
 }
 
 .post-card:hover {
-  box-shadow: 5px 4px 10px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 10px 6px rgba(0, 0, 0, 0.2);
   background: #FFD700;
+  padding: 2px;
 }
 
 .post-img{
@@ -122,7 +125,7 @@ body {
 
 .post-content {
   bottom: 0;
-  background: #FFFFFF;
+  background: #121212;
   width: 100%;
   padding: 30px;
 }
@@ -130,7 +133,8 @@ body {
 .title {
   margin: 0;
   padding: 0 0 10px;
-  color: #333333;
+  color: #e9e9e9;
+  font-family: Roboto,sans-serif;
   font-size: 26px;
   font-weight: 700;
 }

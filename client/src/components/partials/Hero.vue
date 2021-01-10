@@ -140,16 +140,18 @@ h2{
     margin:0;
     padding:0 0 $big-logo-padding 0;
     text-align: left;
-    font-family: droid-serif, serif;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: -0.014em;
     font-style: normal;
 
-    @media (min-width: 400px) { font-size: 3.5em; }
+    @media (min-width: 400px) { font-size: 3em; }
     @media (min-width: 440px) { font-size: 4em; }
     @media (min-width: 500px) { font-size: 5em; }
     @media (min-width: 630px) { font-size: 6em;  }
     @media (min-width: 768px) { font-size: 7.5em; padding-bottom: $big-logo-padding * 2; }
-    @media (min-width: 1200px) { font-size: 10.5em; }
+    @media (min-width: 1200px) { font-size: 8em; }
   }
 
   h3 {
@@ -157,15 +159,16 @@ h2{
     margin:0;
     padding:0 0 $big-logo-padding 0;
     text-align: left;
-    font-family: droid-serif, serif;
+    font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
+    letter-spacing: -0.014em;
     font-style: normal;
     @media (min-width: 400px) { font-size: 1em; }
     @media (min-width: 440px) { font-size: 1.5em; }
     @media (min-width: 500px) { font-size: 2.5em; }
-    @media (min-width: 630px) { font-size: 3.5em;  }
-    @media (min-width: 768px) { font-size: 4em; padding-bottom: $big-logo-padding * 2; }
-    @media (min-width: 1200px) { font-size: 5em; }
+    @media (min-width: 630px) { font-size: 2.7em;  }
+    @media (min-width: 768px) { font-size: 2.8em; padding-bottom: $big-logo-padding * 2; }
+    @media (min-width: 1200px) { font-size: 3em; }
   }
 }
 .container-fluid{

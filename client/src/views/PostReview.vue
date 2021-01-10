@@ -5,7 +5,7 @@
         <Hero title=" Posts" desc="Diese Posts sind noch nich veröffentlicht und müssen gelesen, und dann veröffentlicht werden"/>
       </div>
     </section>
-    <PostList />
+    <PostList show-non-public="true"/>
   </div>
 </template>
 

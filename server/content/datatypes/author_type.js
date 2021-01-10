@@ -21,10 +21,11 @@ exports.Author = class Author {
         if(!(res instanceof Error)){
             console.log(res);
             let ares = res[0];
+            if(ares!==undefined) {
+                let author = new Author(ares.id, ares.name, ares.desc, ares.user_id, ares.pp_id);
 
-            let author = new Author(ares.id, ares.name, ares.desc, ares.user_id,ares.pp_id);
-
-            return author;
+                return author;
+            }return undefined;
         }else return res;
     }
     static async getByUserID(id){
@@ -49,7 +50,7 @@ exports.Author = class Author {
             " `name` TEXT NOT NULL",
             " `desc` TEXT",
             " `user_id` INT NOT NULL UNIQUE",
-            " `pp_id` INT NOT NULL UNIQUE DEFAULT -1",
+            " `pp_id` INT",
             " PRIMARY KEY (`id`)",
             " FOREIGN KEY (`user_id`) REFERENCES users(id)",
             " FOREIGN KEY (`pp_id`) REFERENCES images(id)"

@@ -25,8 +25,9 @@ exports.Post = class Post {
         let resp = await DB.getFromTable("posts","id",id);
         if(!(resp instanceof Error)){
             let postres = resp[0];
-            let post = new Post(postres.id,postres.title,postres.public,postres.content,postres.creation_date,postres.author_id)
-            return post;
+            if(postres===undefined) return undefined;
+                let post = new Post(postres.id, postres.title, postres.public, postres.content, postres.creation_date, postres.author_id)
+                return post;
         }
         return resp;
     }
@@ -34,6 +35,7 @@ exports.Post = class Post {
         let resp = await DB.getFromTable("posts","title","%"+query+"%",true);
         if(!(resp instanceof Error)){
             let imgs = [];
+            if(resp===undefined) return undefined;
             resp.forEach(function (entr){
                 let img = new Post(entr.id,entr.title,entr.public,entr.content,entr.creation_date,entr.author_id);
                 imgs.push(img);
@@ -68,6 +70,12 @@ exports.Post = class Post {
             else
                 return new Post(response.insertId,title,false,content,creation_date,author_id);
         else return undefined;
+    }
+
+    async save(){
+        let res = await DB.update("posts",[this.title,this.public,this.content,this.author_id],["title","public","content","author_id"],"id = "+this.id);
+        if(res instanceof Error) return res;
+        else return this;
     }
 
 }

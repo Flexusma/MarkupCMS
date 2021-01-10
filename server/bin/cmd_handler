@@ -29,7 +29,7 @@ exports.doCmd= async function doCmd(args) {
           await Post.createTable();
           await Image.createTable();
           console.log("Created Database successfully");
-          user = await User.new("flexusma","info@f.de","abc",Permission.CREATE_USER|Permission.CREATE_AUTHOR|Permission.CREATE_POST);
+          user = await User.new("flexusma","info@f.de","abc",Permission.CREATE_USER|Permission.CREATE_AUTHOR|Permission.CREATE_POST|Permission.DELETE_POST|Permission.RELEASE_POST);
           if(user instanceof Error) console.log(user);
 
           process.exit(0);

@@ -43,6 +43,7 @@ export let api={
   api_post_path: "/post",
   api_image_path: "/image",
   api_author_path: "/author",
+  post_list_path: "/list",
   author_id_path: "/id/",
   author_user_path: "/user/",
   api_user_path:"/user",
@@ -59,6 +60,9 @@ export let constant={
 export let lang={
   err_could_not_verify_login:"Entschuldige, etwas ist bei der Überprüfung deines Login-Status schiefgelaufen... Vieleicht hilft es, die Seite neu zu Laden, oder dich neu einzuloggen.",
   err_author_create:"Es ist ein Fehler bei der Erstellung deines Autors aufgerteten. Bitte überprüfe deine Eingaben. Mehr Informationen: \n",
+  err_no_permission:"Keine Berechtigung",
+  err_doesnt_exist:"Diese Seite konten wir leider nicht finden :("
+
 }
 
 export let error_msg={

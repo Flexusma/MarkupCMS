@@ -93,10 +93,20 @@ router.get('/user/', APIsessionChecker , async function(req, res, next) {
         res.json(Responses.respOK(RespCode.OK,newImgs));
 });
 
-router.get('/id/:id', APIsessionChecker ,function(req, res, next) {
-
-
-    res.json(Responses.respOK(RespCode.OK,req.session.user));
+router.get('/id/:id' ,async function(req, res, next) {
+    if(req.params.id !==undefined){
+        let imgs = await Image.getByID(req.params.id);
+        //REMOVE PORT BEFORE PRODUCTION!!!!!!!!!!!!!!!
+        let arr = app.fileSaveDir.split("/");
+        arr.shift();
+        arr.shift();
+        const host = req.protocol+"://"+req.hostname+":3000/"+arr.join("/")+"/";
+        console.log(imgs)
+            imgs.url=host+imgs.name;
+            console.log(imgs)
+        res.json(Responses.respOK(RespCode.OK,imgs));
+    }else
+        res.json(Responses.respError(RespCode.MISSING_FIELD,"image id missing or empty"));
 });
 
 module.exports = router;

@@ -1,12 +1,16 @@
 <template>
-  <div >
-    <Nav />
-    <router-view/>
+  <div class="cont-app">
+    <div class="page-wrapper">
+      <Nav />
+      <router-view/>
+    </div>
+    <Footer class="foo"/>
   </div>
 </template>
 <script>
 import Nav from './components/partials/Nav.vue';
 import {ref} from "@vue/reactivity";
+import Footer from "@/components/partials/Footer";
 export default {
   name: 'app',
   data () {
@@ -16,25 +20,49 @@ export default {
     }
   },
   components: {
+    Footer,
     Nav
   },
 }
 </script>
 <style lang="scss">
 @import url("https://use.typekit.net/mag6emp.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 html{
   min-width: 300px;
   background:#f7f7f7;
+  height: 100%;
 }
 body{
   background:#f7f7f7;
+  height: 100%;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
+.cont-app{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+}
+.page-wrapper {
+  flex: 1 0 auto;
+  padding: 0;
+  box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.footer {
+  flex-shrink: 0;
+  padding: 20px;
+}
+
 /* *********************************
            Variables
   ********************************** */

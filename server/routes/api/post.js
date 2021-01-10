@@ -14,9 +14,15 @@ var router = express.Router();
 /* GET posts. */
 router.get('/:id(\\d)', async function(req, res, next) {
   let post = await Post.getPost(req.params.id)
-  console.log(req.params.id,post)
-  if(!(post instanceof Error)){
+  if(post &&!(post instanceof Error)){
+    if(req.session.user!==undefined)
       return res.json(Responses.respOK(RespCode.OK,post));
+    else{
+        if(post.public){
+          return res.json(Responses.respOK(RespCode.OK,post));
+        }
+    }
+      return res.json(Responses.respError(RespCode.NO_PERMISSION));
   }else return res.json(Responses.respError(RespCode.DOESNT_EXIST_REFERENCE,post));
 });
 router.post('/', APIsessionChecker, [body('title').not().isEmpty(),body('content').not().isEmpty()],async function(req, res, next) {
@@ -47,22 +53,44 @@ router.post('/', APIsessionChecker, [body('title').not().isEmpty(),body('content
     }else return res.json(Responses.respError(RespCode.POST_CREATION_FAILED,post));
   }else res.json(Responses.respError(RespCode.NO_PERMISSION));
 });
-router.patch('/:id', function(req, res, next) {
-  res.send('respond with a resource');
+router.patch('/:id', APIsessionChecker, async function(req, res, next) {
+  if(Permission.hasPermission(req.session.user.permission,Permission.RELEASE_POST)) {
+    if (req.params.id !== undefined) {
+      let public = req.body.public;
+      if(public !==undefined) {
+        let post = await Post.getPost(req.params.id)
+        if (post&&!(post instanceof Error)) {
+          post.public=public;
+          let re = await post.save();
+          res.json(Responses.respOK(RespCode.OK,re));
+        } else return res.json(Responses.respError(RespCode.DOESNT_EXIST_REFERENCE, post));
+      }else return res.json(Responses.respError(RespCode.MISSING_FIELD,"'public' missing" ));
+    }else return res.json(Responses.respError(RespCode.MISSING_FIELD,"'id' missing" ));
+  }else res.json(Responses.respError(RespCode.NO_PERMISSION));
 });
 router.delete('/:id', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/',pagewise,async function(req, res, next) {
+router.get('/list',pagewise,async function(req, res, next) {
 
   let posts = await Post.getPagewise(req.pageData.page, req.pageData.count);
 
-  if (!(posts instanceof Error) && posts !== undefined) {
+  if (posts && !(posts instanceof Error) && posts !== undefined) {
     let pagecount = posts[posts.length-1].pagecount;
     posts = posts.slice(0,-1);
-    console.log(posts);
     req.pageData.total_pages = pagecount;
-    res.json(Responses.respPage(RespCode.OK, posts, req.pageData));
+    let allowedPosts = []
+    if(req.session.user!==undefined)
+      allowedPosts=posts;
+    else{
+      posts.forEach((apost)=>{
+        if(apost.public){
+          allowedPosts.push(apost);
+        }
+      })
+      }
+
+    res.json(Responses.respPage(RespCode.OK, allowedPosts, req.pageData));
   }
 
 });

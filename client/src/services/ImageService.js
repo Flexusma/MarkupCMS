@@ -14,8 +14,8 @@ export default {
         return res.data;
     },
     async getImageFromID(id) {
-        let res = await AuthServiceInstance.authAxiosNoRed(axios.get(api.api_base_url+api.api_image_path+api+"/"+id));
-        return res;
+        let res = await AuthServiceInstance.authAxiosNoRed(axios.get(api.api_base_url+api.api_image_path+"/id/"+id));
+        return res.data;
     },
 
     async uploadImage(file){

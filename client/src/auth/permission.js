@@ -1,7 +1,17 @@
+import AuthServiceInstance from "@/auth/authService";
+
 export default class Permission{
 
     static hasPermission(int, permission){
         return (int & permission) === permission;
+    }
+    static hasIPermission(permission){
+        if(AuthServiceInstance.user!==undefined) {
+            let int = AuthServiceInstance.user.permission;
+            console.log("Permission: ",int)
+            return (int & permission) === permission;
+        }
+        return false;
     }
 
     static CREATE_USER = 0x1;
@@ -20,4 +30,5 @@ export default class Permission{
     static IMAGE_DELETE = 0x400;
 
     static CREATE_AUTHOR_OTHER = 0x800;
+    static RELEASE_POST = 0x1000;
 }

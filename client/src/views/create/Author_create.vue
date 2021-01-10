@@ -6,7 +6,7 @@
           <AuthorDisplay :opt_name="author.name" :opt_desc="author.desc"/>
         </div>
         <div v-else>
-          <AuthorDisplay :opt_name="inp_name" :opt_desc="inp_desc"/>
+          <AuthorDisplay :opt_name="inp_name" :opt_desc="inp_desc" :opt_img="picture_id"/>
           <Modal mid="author-create-modal" title="Success" body="Author was created successfully" :buttons="modal_buttons"/>
           <div class="card m-3">
             <form v-on:submit.prevent="submitAuthor" class="card-body">
@@ -47,7 +47,7 @@ name: "Author_create",
   components: {Spinner, ImageGalleryPicker, Modal, AdaptiveUserSelect, AdaptiveInput, AuthorDisplay, Hero},
   methods:{
       async submitAuthor() {
-        let res = await AuthorService.createAuthor(this.inp_name,this.inp_desc,this.inp_usr_id);
+        let res = await AuthorService.createAuthor(this.inp_name,this.inp_desc,this.inp_usr_id,this.picture_id);
         console.log(res)
         if(res.data.info.code===200){
           $('#author-create-modal').modal();
@@ -89,6 +89,9 @@ name: "Author_create",
       ],
     }
   },
+  watch:{
+    picture_id: function() {console.log(this.picture_id)},
+  }
 
 
 }

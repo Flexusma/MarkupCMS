@@ -13,9 +13,15 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/id/:id(\\d)', async function(req, res, next) {
 
-    if(req.params.id!==undefined)
+    if(req.params.id!==undefined) {
 
-    res.send('respond with a resource');
+        let resp = await Author.getByID(req.params.id);
+        console.log(resp)
+        if(resp!==undefined&&!(resp instanceof Error))
+            res.json(Responses.respOK(RespCode.OK,resp))
+        else res.json(Responses.respError(RespCode.DOESNT_EXIST_REFERENCE))
+    }else
+        res.json(Responses.respError(RespCode.MISSING_FIELD))
 });
 router.get('/user/:id(\\d)', async function(req, res, next) {
 
@@ -43,9 +49,10 @@ router.post('/', APIsessionChecker, [body('name').not().isEmpty(),body('descript
         let name = req.body.name;
         let desc = req.body.description;
         let createUserID = req.body.create_user_id;
+        let pp_id = req.body.pp_id;
         let crt_user = req.session.user;
 
-        console.log(name,desc,createUserID,crt_user);
+        console.log(name,desc,createUserID,crt_user,pp_id);
         let author;
             if(createUserID!==undefined) {
                 if (crt_user.id !== createUserID) {
@@ -57,7 +64,7 @@ router.post('/', APIsessionChecker, [body('name').not().isEmpty(),body('descript
                     //safety check
                     console.log(other_user,createUserID)
                     if (other_user.id === createUserID)
-                        author = await Author.new(name, desc, createUserID);
+                        author = await Author.new(name, desc, createUserID,pp_id);
                 }else
                     return res.json(Responses.respError(RespCode.DOESNT_EXIST_REFERENCE,"No user with ID: "+createUserID))
             }else
