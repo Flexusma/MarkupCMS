@@ -19,14 +19,14 @@
   </footer>
 </section>-->
 <template>
-  <div class="post-card">
-    <div class="post-img">
+  <div class="post-card rounded">
+    <div class="post-img rounded overflow-hidden">
       <div class="date rounded-pill p-2 text-center align-items-center">
         <p class="day m-0">{{getDate(post.creation_date)}}</p>
       </div>
       <img v-if="getFirstImage(post.content)!==undefined" :src="getFirstImage(post.content)"/>
     </div>
-    <div class="post-content">
+    <div class="post-content rounded-bottom">
       <div class="category"></div>
       <h1 class="title">{{post.title}}</h1>
       <h2 class="sub_title">{{strip(post.content)}}</h2>
@@ -138,7 +138,7 @@ body {
 .sub_title {
   margin: 0;
   padding: 0 0 20px;
-  color: #007bff;
+  color: #818181;
   font-size: 20px;
   font-weight: 400;
 }

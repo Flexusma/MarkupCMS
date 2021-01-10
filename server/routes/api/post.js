@@ -12,8 +12,9 @@ const { body, validationResult } = require('express-validator');
 var router = express.Router();
 
 /* GET posts. */
-router.get('/:id(\\d)', function(req, res, next) {
-  let post = Post.getPost(req.params.id)
+router.get('/:id(\\d)', async function(req, res, next) {
+  let post = await Post.getPost(req.params.id)
+  console.log(req.params.id,post)
   if(!(post instanceof Error)){
       return res.json(Responses.respOK(RespCode.OK,post));
   }else return res.json(Responses.respError(RespCode.DOESNT_EXIST_REFERENCE,post));

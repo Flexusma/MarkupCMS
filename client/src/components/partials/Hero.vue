@@ -2,12 +2,12 @@
   <div class="hero-bg-img">
     <div class="container-fluid big-logo-row">
       <div class="container">
-        <div class="row">
+        <div class="col">
           <div class="col-xs-12 big-logo-container text-left">
             <h1 class="big-logo">{{title}}</h1>
           </div>
           <div class="col-xs-12 big-logo-container text-left">
-            <h2 class="big-logo">{{desc}}</h2>
+            <h3 class="big-logo">{{desc}}</h3>
           </div>
         </div>
       </div>
@@ -86,10 +86,6 @@ h2{
   }
 }
 
-h2{
-
-}
-
 .hero-button {
   background: #fff;
   color: #444;
@@ -124,6 +120,7 @@ h2{
   color: white;
   font-size: 2.5em;
   padding-bottom: $small-logo-padding;
+
 }
 
 /* *********************************
@@ -143,6 +140,9 @@ h2{
     margin:0;
     padding:0 0 $big-logo-padding 0;
     text-align: left;
+    font-family: droid-serif, serif;
+    font-weight: 700;
+    font-style: normal;
 
     @media (min-width: 400px) { font-size: 3.5em; }
     @media (min-width: 440px) { font-size: 4em; }
@@ -153,17 +153,19 @@ h2{
   }
 
   h3 {
-    font-size: 2em;
+    font-size: 1em;
     margin:0;
     padding:0 0 $big-logo-padding 0;
     text-align: left;
-
-    @media (min-width: 400px) { font-size: 2.5em; }
-    @media (min-width: 440px) { font-size: 3.5em; }
-    @media (min-width: 500px) { font-size: 4.5em; }
-    @media (min-width: 630px) { font-size: 5.5em;  }
-    @media (min-width: 768px) { font-size: 7em; padding-bottom: $big-logo-padding * 2; }
-    @media (min-width: 1200px) { font-size: 10em; }
+    font-family: droid-serif, serif;
+    font-weight: 700;
+    font-style: normal;
+    @media (min-width: 400px) { font-size: 1em; }
+    @media (min-width: 440px) { font-size: 1.5em; }
+    @media (min-width: 500px) { font-size: 2.5em; }
+    @media (min-width: 630px) { font-size: 3.5em;  }
+    @media (min-width: 768px) { font-size: 4em; padding-bottom: $big-logo-padding * 2; }
+    @media (min-width: 1200px) { font-size: 5em; }
   }
 }
 .container-fluid{

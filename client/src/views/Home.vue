@@ -39,25 +39,10 @@ export default {
     background-repeat: no-repeat;
 
   }
-
-  .button-block {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 20px;
-    width: 100%;
-    .button {
-      margin-right: 50px;
-      padding-left: 50px;
-      padding-right: 50px;
-    }
-    .welcome {
-      width: 400px;
-      padding: 10px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  .button-block{
+    margin-top: 3em;
   }
+
   .is-xl {
     font-size: 1.7rem;
   }

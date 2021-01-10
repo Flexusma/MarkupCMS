@@ -48,7 +48,6 @@ exports.Database = class Database{
         prepstate+=");";
 
         console.log("Inserting data into "+table_name+" with Statement: \n\t"+prepstate);
-        console.log(values);
         let err;
         let rows, fieldsresp;
         try{

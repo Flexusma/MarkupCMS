@@ -1,16 +1,16 @@
 <template>
   <div class="event-single" v-if="loaded">
     <Hero :title="post.title" :desc="getDate(post.creation_date)"/>
-    <section class="event-content">
+    <section class="event-content m-3">
       <div class="container-fluid">
         <h1 class="">{{post.title}}</h1>
-        <div class="post-content" v-html="post.content">
+        <span class="post-content" v-html="post.content">
 
-        </div>
+        </span>
       </div>
     </section>
   </div>
-  <div v-else class="text-center">
+  <div v-else class="text-center m-3">
     <Spinner/>
     <h1>Loading...</h1>
   </div>
@@ -20,6 +20,7 @@
 import PostService from '@/services/PostService.js';
 import Hero from "@/components/partials/Hero";
 import Spinner from "@/components/partials/Spinner";
+
 var dateFormat = require('dateformat');
 export default {
   name: 'EventSingle',
@@ -37,6 +38,7 @@ export default {
   methods: {
     async getEventData() {
       PostService.getPostSingle(this.$route.params.id).then((res) => {
+        console.log(res)
           this.post=res;
           this.loaded=true;
         });
@@ -50,3 +52,21 @@ export default {
   }
 }
 </script>
+<style scoped>
+.post-content>>>img{
+  max-width: 100% !important;
+  height: auto;
+  border-radius: 10px;
+}
+body{
+  background: #fff;
+}
+html{
+  background: #fff;
+}
+.event-content{
+  font-family: droid-serif, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+</style>

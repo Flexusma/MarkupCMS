@@ -3,7 +3,7 @@
     <h2 class="text-center m-3">Neue Beiträge</h2>
     <div class="container-fluid is-multiline">
       <div v-for="post in posts" :event="post" :key="post.id" class=" is-one-quarter row">
-        <router-link :to="`/post/${post.id}`" class="col">
+        <router-link :to="`/post/${post.id}`" class="col m-3">
           <PostCard :post="post" />
         </router-link>
       </div>

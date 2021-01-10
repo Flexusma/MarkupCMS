@@ -10,7 +10,6 @@
         </form>
         <ul class="nav navbar-nav ml-auto" :key="$root.$data.isAuth">
           <li class="active nav-item text-hover-fill-goes-down"><a @click="$auth.push('home')" class="nav-link">Home</a></li>
-          <li class="nav-item text-hover-fill-goes-down"><a  class="nav-link" >Link</a></li>
           <li v-if="$root.$data.isAuth" class="nav-item text-hover-fill-goes-down"><a  class="nav-link" @click="$auth.push('postReview')">Review</a></li>
 
           <li v-if="$root.$data.isAuth" class="nav-item dropdown text-hover-fill-goes-down">

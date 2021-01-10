@@ -21,7 +21,7 @@ export default {
 }
 </script>
 <style lang="scss">
-
+@import url("https://use.typekit.net/mag6emp.css");
 html{
   min-width: 300px;
   background:#f7f7f7;
