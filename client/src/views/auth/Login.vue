@@ -103,13 +103,16 @@ p {
 .login-page {
   align-items: center;
   display: flex;
-  height: 100vh;
+  height: 50vh;
+  min-height: 400px;
+
 
   .wallpaper-login {
     background: url(https://images.pexels.com/photos/32237/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
     no-repeat center center;
     background-size: cover;
-    height: 100%;
+    height: 50vh;
+    min-height: 400px;
     position: absolute;
     width: 100%;
   }
@@ -127,7 +130,8 @@ p {
     background: url(https://images.pexels.com/photos/533671/pexels-photo-533671.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
     no-repeat center center;
     background-size: cover;
-    height: 100%;
+    height: 50vh;
+    min-height: 400px;
     position: absolute;
     width: 100%;
     z-index: -1;

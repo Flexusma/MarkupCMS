@@ -20,7 +20,7 @@
 </section>-->
 <template>
   <div class="post-card rounded">
-    <div class="post-img rounded overflow-hidden">
+    <div class="post-img rounded-top overflow-hidden">
       <div class="date rounded-pill p-2 text-center align-items-center">
         <p class="day m-0">{{getDate(post.creation_date)}}</p>
       </div>
@@ -95,12 +95,14 @@ body {
   background: #FFD700;
   min-width: 100%;
   transition: padding 50ms;
+  color: #999999;
 }
 
 .post-card:hover {
   box-shadow: 0px 5px 10px 6px rgba(0, 0, 0, 0.2);
   background: #FFD700;
   padding: 2px;
+  color: white;
 }
 
 .post-img{
@@ -170,7 +172,6 @@ body {
 
 .post-meta {
   margin: 30px 0 0;
-  color: #999999;
 }
 
 .timestamp {

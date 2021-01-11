@@ -16,6 +16,7 @@ var router = new Router();
 var fileUpload = require('express-fileupload');
 var fs = require('fs');
 
+const port = process.env.PORT || 80
 
 const sessionStore = require("./content/authentication/session_utils");
 let session = sessionStore.session;
@@ -116,6 +117,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.listen(port);
 
 module.exports = app;
 

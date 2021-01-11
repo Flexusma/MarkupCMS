@@ -3,8 +3,8 @@
     <h2 class="text-center list-title m-3">Neue Beiträge</h2>
     <div class="container-fluid is-multiline">
       <div class=" is-one-quarter row">
-        <router-link v-for="post in posts" :event="post" :key="post.id" :to="`/post/${post.id}`" class="col m-3 one-container">
-          <PostCard :post="post" />
+        <router-link v-for="post in posts" :event="post" :key="post.id" :to="`/post/${post.id}`" class="col p-0 m-3 ml-4 mr-4 one-container">
+          <PostCard :post="post"/>
         </router-link>
       </div>
       <div v-if="posts.length===0" class="text-center m-5">
@@ -38,7 +38,9 @@ export default {
         (posts => {
           let showPosts = [];
           if(this.showNonPublic)
-            showPosts=posts;
+            posts.forEach((post)=>{
+              if(!post.public) showPosts.push(post);
+            });
           else{
             posts.forEach((post)=>{
               if(post.public) showPosts.push(post);
