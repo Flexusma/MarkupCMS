@@ -26,7 +26,7 @@ import('vue-select-image/dist/vue-select-image.css');
 axios.defaults.withCredentials = true;
 /*
 
-CONSTANT VALUES AND OTHER SETTINGS
+CONSTANT VALUES AND OTHER SETTINGSw
 
  */
 const api_base_url="https://mcms-api.flexu.li//api"

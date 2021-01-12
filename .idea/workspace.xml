@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="720dbca9-f8aa-403e-8ab6-3ac043c7a7cd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/app.d3074ca4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-175e6f6c.c7229be5.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-58ebef4b.c194eb86.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-6a6bbec8.f2dc73de.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-76d549c8.7a81f752.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-f30203f8.13c8f133.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/chunk-vendors.6d747cbe.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/img/hero-image.1b9fb896.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.0d1e2c51.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/app.0d1e2c51.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-175e6f6c.4f087d95.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-175e6f6c.4f087d95.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0bd228.2507a0a5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-2d0bd228.2507a0a5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-58ebef4b.4135b1c0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-58ebef4b.4135b1c0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6a6bbec8.09da34a1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6a6bbec8.09da34a1.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6c1b6810.cc737d47.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-6c1b6810.cc737d47.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-76d549c8.0b32d04e.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-76d549c8.0b32d04e.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-ee7bb250.10c19ed0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-ee7bb250.10c19ed0.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-f30203f8.eefd6240.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-f30203f8.eefd6240.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.af65dbda.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/js/chunk-vendors.af65dbda.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/1b313b47289a6eb62ad58e431274dd7a.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/1b313b47289a6eb62ad58e431274dd7a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static.json" beforeDir="false" afterPath="$PROJECT_DIR$/static.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +86,7 @@
       <workItem from="1610324680767" duration="1323000" />
       <workItem from="1610354742194" duration="7460000" />
       <workItem from="1610400113338" duration="4003000" />
-      <workItem from="1610446160681" duration="1371000" />
+      <workItem from="1610446160681" duration="1998000" />
     </task>
     <servers />
   </component>
