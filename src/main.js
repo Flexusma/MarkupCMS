@@ -29,7 +29,7 @@ axios.defaults.withCredentials = true;
 CONSTANT VALUES AND OTHER SETTINGSw
 
  */
-const api_base_url="https://mcms-api.flexu.li//api"
+const api_base_url="https://mcms-api.flexu.li/api"
 const api_token_check_url="/post";
 
 export let api={
