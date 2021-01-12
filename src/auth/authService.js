@@ -89,8 +89,8 @@ class AuthService{
 
     async loginWithCred(user, pass){
         let resp = await axios.post(api.api_base_url+api.api_session_path,"",{headers:{
-            'x_user':user,
-            'x_pass':pass
+            'x-user':user,
+            'x-pass':pass
         },
         });
         if(constant.debug)

@@ -10,7 +10,7 @@ export default {
     return res.data.data;
   },
   async getPostSingle(postId) {
-    let res = await axios.get("http://localhost:3000/events/" + postId);
+    let res = await axios.get(api.api_base_url+api.api_post_path+"/" + postId);
     return res.data;
   },
 
