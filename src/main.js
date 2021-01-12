@@ -29,7 +29,7 @@ axios.defaults.withCredentials = true;
 CONSTANT VALUES AND OTHER SETTINGS
 
  */
-const api_base_url="https://mcms-api.herokuapp.com/api"
+const api_base_url="https://mcms-api.flexu.li//api"
 const api_token_check_url="/post";
 
 export let api={
