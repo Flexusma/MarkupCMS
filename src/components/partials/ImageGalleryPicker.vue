@@ -94,7 +94,7 @@ name: "ImageGalleryPicker",
       return;
     },
     btn_upload(){
-      $('#image-uploader').modal();
+      $('#image-uploader').appendTo("body").modal('show');
     },
     image_changed(event){
       var input = event.target;

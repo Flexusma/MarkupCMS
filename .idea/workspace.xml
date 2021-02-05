@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="720dbca9-f8aa-403e-8ab6-3ac043c7a7cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/partials/ImageGalleryPicker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/partials/ImageGalleryPicker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/partials/Nav.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/partials/Nav.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/create/Author_create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/create/Author_create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/create/Post_create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/create/Post_create.vue" afterDir="false" />
     </list>
@@ -93,7 +94,8 @@
       <workItem from="1610463721579" duration="3514000" />
       <workItem from="1610535261923" duration="337000" />
       <workItem from="1610615996185" duration="739000" />
-      <workItem from="1612523074463" duration="2083000" />
+      <workItem from="1612523074463" duration="2746000" />
+      <workItem from="1612548399913" duration="414000" />
     </task>
     <servers />
   </component>
