@@ -51,7 +51,7 @@ name: "Author_create",
         if(constant.debug)
         console.log(res)
         if(res.data.info.code===200){
-          $('#author-create-modal').modal();
+          $('#author-create-modal').appendTo("body").modal();
         }else{
           this.error_msg=lang.err_author_create+JSON.stringify(res.data.error);
         }

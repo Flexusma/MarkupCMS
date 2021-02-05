@@ -81,10 +81,10 @@ name: "Post_create",
 
       }
       if(res.data.info.code===200){
-        $('#postsuccess').modal();
+        $('#postsuccess').appendTo("body").modal();
         return;
       }else
-        $('#postinfo').modal();
+        $('#postinfo').appendTo("body").modal();
 
     }
   }
