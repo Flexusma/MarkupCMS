@@ -16,6 +16,11 @@ export default createRouter({
       component: Home
     },
     {
+      path: '/impr',
+      name: 'imprint',
+      component: () => import('../views/legal/Impr')
+    },
+    {
       path: '/about',
       name: 'about',
       component: () => import('../views/About.vue')

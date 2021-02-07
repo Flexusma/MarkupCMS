@@ -32,11 +32,11 @@ export default {
 html{
   min-width: 300px;
   background:#f7f7f7;
-  height: 100%;
+  min-height: 100%;
 }
 body{
   background:#f7f7f7;
-  height: 100%;
+  min-height: 100vh;
 }
 #app {
   font-family: 'Roboto', sans-serif;
@@ -44,10 +44,10 @@ body{
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100vh;
 }
 .cont-app{
-  height:100%;
+  min-height:100vh;
   display: flex;
   flex-direction: column;
 }

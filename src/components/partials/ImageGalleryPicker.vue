@@ -22,7 +22,7 @@
             </div>
           </div>
           <div class="card-footer ">
-            <div class="row w-100">
+            <div v-if="!disableButtons" class="row w-100">
             <button type="button" class="btn btn-primary m-1"  @click="btn_upload()" >Upload</button>
             <button type="button" class="btn btn-success m-1"  @click="btn_ok()" >Done</button>
             </div>
@@ -66,7 +66,7 @@ import {constant} from "@/main";
 export default {
 name: "ImageGalleryPicker",
   components: {SmoothReflow},
-  props:["title"],
+  props:["title","disableButtons"],
   data() {
     return{
       imageList: undefined,
