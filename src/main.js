@@ -24,13 +24,15 @@ import('vue-select-image/dist/vue-select-image.css');
 
 
 axios.defaults.withCredentials = true;
+const develop=true;
+
 /*
 
 CONSTANT VALUES AND OTHER SETTINGSw
 
  */
 let api_base_url="https://mcms-api.flexu.li/api"
-if(process.env.NODE_ENV==="development")
+if(develop)
   api_base_url="http://localhost/api"
 const api_token_check_url="/post";
 

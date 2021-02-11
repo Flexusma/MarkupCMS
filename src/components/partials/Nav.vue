@@ -1,6 +1,6 @@
 <template>
   <div class="navbar navbar-light navbar-inverse sticky-top navbar-expand-md" role="navigation">
-    <div class="container">
+    <div class="container-fluid">
       <button class="navbar-right navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span>☰</button>
 
       <div class="navbar-collapse collapse mt-3">
@@ -9,23 +9,29 @@
           <button class="btn btn-outline-primary" type="submit">Search</button>
         </form>
         <ul class="nav navbar-nav ml-auto" :key="$root.$data.isAuth">
-          <li class="active nav-item text-hover-fill-goes-down"><a @click="$auth.push('home')" class="nav-link">Home</a></li>
-          <li class="nav-item text-hover-fill-goes-down"><a href="https://www.instagram.com/willigis.sv/" class="nav-link"><i class="lni lni-instagram"></i> Instagram</a></li>
-          <li v-if="$root.$data.isAuth" class="nav-item text-hover-fill-goes-down"><a  class="nav-link" @click="$auth.push('postReview')">Review</a></li>
+          <li class="active nav-item text-hover-fill-goes-down"><router-link class="nav-link" :to="{name:'home'}">Home</router-link></li>
+          <li class="nav-item text-hover-fill-goes-down"><a href="https://www.instagram.com/willigis.sv/" class="nav-link"><i class="lni lni-instagram"></i><p class="d-none d-lg-block float-right ml-1">Instagram</p></a></li>
+          <li v-if="$root.$data.isAuth" class="nav-item text-hover-fill-goes-down"><router-link class="nav-link" :to="{name:'postReview'}">Review</router-link></li>
 
           <li v-if="$root.$data.isAuth" class="nav-item dropdown text-hover-fill-goes-down">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Create
+                More
               </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <router-link class="dropdown-item" :to="{name:'post_create'}">Post</router-link>
-              <a class="dropdown-item" @click="$auth.push('user_create')">User</a>
-              <a class="dropdown-item" @click="$auth.push('author_create')">Author</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+              <router-link class="dropdown-item" :to="{name:'post_create'}">Create Post</router-link>
+              <router-link class="dropdown-item" :to="{name:'user_create'}">Create User</router-link>
+              <router-link class="dropdown-item" :to="{name:'author_create'}">Create Author</router-link>
             </div>
           </li>
 
-          <li v-if="!$root.$data.isAuth" class="nav-item text-hover-fill-goes-down"><a @click="login" class="nav-link">Log in</a></li>
-          <li v-else class="nav-item text-hover-fill-goes-down"><a  @click="logout" class="nav-link">Log out</a></li>
+          <li v-if="!$root.$data.isAuth" class="nav-item text-hover-fill-goes-down"><router-link class="nav-link" :to="{name:'login'}">Login</router-link></li>
+          <li v-else class="nav-item dropdown text-hover-fill-goes-down">
+            <p class="nav-link dropdown-toggle" id="navbarDropdownUserLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{$auth.user.username}}</p>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownUserLink">
+              <a class="dropdown-item" @click="logout">Log-Out</a>
+              <router-link class="dropdown-item" :to="{name:'settings'}">Settings</router-link>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -36,17 +42,6 @@
 export default {
   name: 'Nav',
   methods: {
-  // Log the user in
-  login() {
-    this.$auth.loginRedirect();
-    this.$auth.checkAuthReq();
-    return;
-  },
-    push(to){
-        if(this.$route.name!==to){
-            this.$router.push({name: to});
-        }
-    },
   // Log the user out
   logout() {
     this.$auth.logout({

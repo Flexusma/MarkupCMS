@@ -1,12 +1,14 @@
 <template>
-  <Hero title="Settings" />
-  <div class="container-fluid">
-    <div class="pb-pick">
-      <h2 class="">Bilder verwalten:</h2>
-      <ImageGalleryPicker title="Gallerie" />
-      
+  <section id="settings">
+    <Hero title="Settings" />
+    <div class="container-fluid">
+      <div class="pb-pick">
+        <h2 class="">Bilder verwalten:</h2>
+        <ImageGalleryPicker title="Gallerie" />
+
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

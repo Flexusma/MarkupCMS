@@ -21,6 +21,12 @@ export default createRouter({
       component: () => import('../views/legal/Impr')
     },
     {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('../views/Settings'),
+      beforeEnter: authGuard
+    },
+    {
       path: '/about',
       name: 'about',
       component: () => import('../views/About.vue')
@@ -47,8 +53,15 @@ export default createRouter({
     {
       path: '/create/post',
       name: 'post_create',
-      meta:addMeta(Permission.CREATE_POST,Permission.CREATE_USER),
+      meta:addMeta(Permission.CREATE_POST),
       component: () => import('../views/create/Post_create'),
+      beforeEnter: authGuard
+    },
+    {
+      path: '/create/user',
+      name: 'user_create',
+      meta:addMeta(Permission.CREATE_USER),
+      component: () => import('../views/create/User_create'),
       beforeEnter: authGuard
     },
     {

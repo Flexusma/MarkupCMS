@@ -39,7 +39,7 @@
 
 
 
-        <p>Herr Dr. Roman Riedel (V. i. S. d. P.)</p>
+        <p>Dr. Roman Riedel (V. i. S. d. P.)</p>
 
         <h3>Redaktion:</h3>
 
@@ -47,7 +47,7 @@
 
         <h3>Betreuende Lehrkraft:</h3>
 
-        <p>Frau Stefanie Gommel</p>
+        <p>Stefanie Gommel</p>
 
         <h3>Urheberrecht:</h3>
       <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
